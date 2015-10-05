@@ -51,7 +51,7 @@ Partial Class frmOperations
         Me.btnView.Name = "btnView"
         Me.btnView.Size = New System.Drawing.Size(113, 23)
         Me.btnView.TabIndex = 2
-        Me.btnView.Text = "View Appointments"
+        Me.btnView.Text = "View Apppointments"
         Me.btnView.UseVisualStyleBackColor = True
         '
         'frmOperations
