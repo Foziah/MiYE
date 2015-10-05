@@ -11,3 +11,10 @@ F:\Visual Sutdio 2013\Projects\MIYE\MIYE\obj\Debug\MIYE.exe
 F:\Visual Sutdio 2013\Projects\MIYE\MIYE\obj\Debug\MIYE.xml
 F:\Visual Sutdio 2013\Projects\MIYE\MIYE\obj\Debug\MIYE.pdb
 F:\Visual Sutdio 2013\Projects\MIYE\MIYE\obj\Debug\MIYE.frmAddServiceType.resources
+F:\Visual Sutdio 2013\Projects\MIYE\MIYE\obj\Debug\MIYE.frmUpdateServices.resources
+F:\Visual Sutdio 2013\Projects\MIYE\MIYE\obj\Debug\MIYE.frmUpdateServiceTypes.resources
+F:\Visual Sutdio 2013\Projects\MIYE\MIYE\obj\Debug\MIYE.vbprojResolveAssemblyReference.cache
+F:\Visual Sutdio 2013\Projects\MIYE\MIYE\obj\Debug\MIYE.frmAddGuest.resources
+F:\Visual Sutdio 2013\Projects\MIYE\MIYE\obj\Debug\MIYE.frmOperations.resources
+F:\Visual Sutdio 2013\Projects\MIYE\MIYE\obj\Debug\MIYE.frmAppointment.resources
+F:\Visual Sutdio 2013\Projects\MIYE\MIYE\obj\Debug\MIYE.frmViewAppointments.resources
