@@ -78,15 +78,42 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmAddGuest.Designer.vb">
+      <DependentUpon>frmAddGuest.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddGuest.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAppointment.Designer.vb">
+      <DependentUpon>frmAppointment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAppointment.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmMaintenance.Designer.vb">
       <DependentUpon>frmMaintenance.vb</DependentUpon>
     </Compile>
     <Compile Include="frmMaintenance.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmOperations.Designer.vb">
+      <DependentUpon>frmOperations.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmOperations.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmViewAppointments.Designer.vb">
+      <DependentUpon>frmViewAppointments.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmViewAppointments.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MIYEDataset.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <DependentUpon>MIYEDataset.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MIYEDataset.vb">
       <DependentUpon>MIYEDataset.xsd</DependentUpon>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -116,13 +143,37 @@
     <Compile Include="Services\frmAddServiceType.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Services\frmUpdateServices.Designer.vb">
+      <DependentUpon>frmUpdateServices.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Services\frmUpdateServices.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Services\frmUpdateServiceTypes.Designer.vb">
+      <DependentUpon>frmUpdateServiceTypes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Services\frmUpdateServiceTypes.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAddGuest.resx">
+      <DependentUpon>frmAddGuest.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAppointment.resx">
+      <DependentUpon>frmAppointment.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMaintenance.resx">
       <DependentUpon>frmMaintenance.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOperations.resx">
+      <DependentUpon>frmOperations.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmViewAppointments.resx">
+      <DependentUpon>frmViewAppointments.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -135,6 +186,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Services\frmAddServiceType.resx">
       <DependentUpon>frmAddServiceType.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Services\frmUpdateServices.resx">
+      <DependentUpon>frmUpdateServices.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Services\frmUpdateServiceTypes.resx">
+      <DependentUpon>frmUpdateServiceTypes.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -29,15 +29,15 @@ Partial Class frmAddService
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnSave = New System.Windows.Forms.Button()
         Me.gvServices = New System.Windows.Forms.DataGridView()
-        Me.MIYEDataset = New MIYE.MIYEDataset()
-        Me.TblServicesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.TblServicesTableAdapter = New MIYE.MIYEDatasetTableAdapters.tblServicesTableAdapter()
         Me.ServiceIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ServiceNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CostDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TblServicesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.MIYEDataset = New MIYE.MIYEDataset()
+        Me.TblServicesTableAdapter = New MIYE.MIYEDatasetTableAdapters.tblServicesTableAdapter()
         CType(Me.gvServices, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.MIYEDataset, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TblServicesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.MIYEDataset, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -97,20 +97,6 @@ Partial Class frmAddService
         Me.gvServices.Size = New System.Drawing.Size(408, 150)
         Me.gvServices.TabIndex = 5
         '
-        'MIYEDataset
-        '
-        Me.MIYEDataset.DataSetName = "MIYEDataset"
-        Me.MIYEDataset.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'TblServicesBindingSource
-        '
-        Me.TblServicesBindingSource.DataMember = "tblServices"
-        Me.TblServicesBindingSource.DataSource = Me.MIYEDataset
-        '
-        'TblServicesTableAdapter
-        '
-        Me.TblServicesTableAdapter.ClearBeforeFill = True
-        '
         'ServiceIDDataGridViewTextBoxColumn
         '
         Me.ServiceIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
@@ -135,6 +121,20 @@ Partial Class frmAddService
         Me.CostDataGridViewTextBoxColumn.Name = "CostDataGridViewTextBoxColumn"
         Me.CostDataGridViewTextBoxColumn.ReadOnly = True
         '
+        'TblServicesBindingSource
+        '
+        Me.TblServicesBindingSource.DataMember = "tblServices"
+        Me.TblServicesBindingSource.DataSource = Me.MIYEDataset
+        '
+        'MIYEDataset
+        '
+        Me.MIYEDataset.DataSetName = "MIYEDataset"
+        Me.MIYEDataset.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'TblServicesTableAdapter
+        '
+        Me.TblServicesTableAdapter.ClearBeforeFill = True
+        '
         'frmAddService
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -150,8 +150,8 @@ Partial Class frmAddService
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Add Service"
         CType(Me.gvServices, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.MIYEDataset, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TblServicesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.MIYEDataset, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

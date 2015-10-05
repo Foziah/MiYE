@@ -21,6 +21,5 @@
 
     Private Sub cbServices_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbServices.SelectedIndexChanged
         Me.ViewServiceTypesTableAdapter.FillByServiceID(Me.MIYEDataset.viewServiceTypes, cbServices.SelectedValue)
-
     End Sub
 End Class
