@@ -33,18 +33,18 @@ Partial Class frmPrint
         Me.txtAppointmentDate = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.txtStartTime = New System.Windows.Forms.TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.txtEndTime = New System.Windows.Forms.TextBox()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.txtServiceName = New System.Windows.Forms.TextBox()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.txtServiceType = New System.Windows.Forms.TextBox()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.lblTotalPrice = New System.Windows.Forms.Label()
         Me.txtRate = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
+        Me.txtServiceType = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.txtServiceName = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.txtEndTime = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.txtStartTime = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.lblTotalPrice = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -153,39 +153,39 @@ Partial Class frmPrint
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Service Details"
         '
-        'txtStartTime
+        'txtRate
         '
-        Me.txtStartTime.Location = New System.Drawing.Point(121, 19)
-        Me.txtStartTime.Name = "txtStartTime"
-        Me.txtStartTime.ReadOnly = True
-        Me.txtStartTime.Size = New System.Drawing.Size(147, 20)
-        Me.txtStartTime.TabIndex = 12
+        Me.txtRate.Location = New System.Drawing.Point(121, 123)
+        Me.txtRate.Name = "txtRate"
+        Me.txtRate.ReadOnly = True
+        Me.txtRate.Size = New System.Drawing.Size(147, 20)
+        Me.txtRate.TabIndex = 17
         '
-        'Label6
+        'Label11
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(12, 22)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(55, 13)
-        Me.Label6.TabIndex = 11
-        Me.Label6.Text = "Start Time"
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(12, 126)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(51, 13)
+        Me.Label11.TabIndex = 16
+        Me.Label11.Text = "Rate/min"
         '
-        'txtEndTime
+        'txtServiceType
         '
-        Me.txtEndTime.Location = New System.Drawing.Point(121, 45)
-        Me.txtEndTime.Name = "txtEndTime"
-        Me.txtEndTime.ReadOnly = True
-        Me.txtEndTime.Size = New System.Drawing.Size(147, 20)
-        Me.txtEndTime.TabIndex = 14
+        Me.txtServiceType.Location = New System.Drawing.Point(121, 97)
+        Me.txtServiceType.Name = "txtServiceType"
+        Me.txtServiceType.ReadOnly = True
+        Me.txtServiceType.Size = New System.Drawing.Size(147, 20)
+        Me.txtServiceType.TabIndex = 14
         '
-        'Label7
+        'Label9
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(12, 48)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(52, 13)
-        Me.Label7.TabIndex = 13
-        Me.Label7.Text = "End Time"
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(12, 100)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(70, 13)
+        Me.Label9.TabIndex = 13
+        Me.Label9.Text = "Service Type"
         '
         'txtServiceName
         '
@@ -204,22 +204,39 @@ Partial Class frmPrint
         Me.Label8.TabIndex = 13
         Me.Label8.Text = "Service"
         '
-        'txtServiceType
+        'txtEndTime
         '
-        Me.txtServiceType.Location = New System.Drawing.Point(121, 97)
-        Me.txtServiceType.Name = "txtServiceType"
-        Me.txtServiceType.ReadOnly = True
-        Me.txtServiceType.Size = New System.Drawing.Size(147, 20)
-        Me.txtServiceType.TabIndex = 14
+        Me.txtEndTime.Location = New System.Drawing.Point(121, 45)
+        Me.txtEndTime.Name = "txtEndTime"
+        Me.txtEndTime.ReadOnly = True
+        Me.txtEndTime.Size = New System.Drawing.Size(147, 20)
+        Me.txtEndTime.TabIndex = 14
         '
-        'Label9
+        'Label7
         '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(12, 100)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(70, 13)
-        Me.Label9.TabIndex = 13
-        Me.Label9.Text = "Service Type"
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(12, 48)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(52, 13)
+        Me.Label7.TabIndex = 13
+        Me.Label7.Text = "End Time"
+        '
+        'txtStartTime
+        '
+        Me.txtStartTime.Location = New System.Drawing.Point(121, 19)
+        Me.txtStartTime.Name = "txtStartTime"
+        Me.txtStartTime.ReadOnly = True
+        Me.txtStartTime.Size = New System.Drawing.Size(147, 20)
+        Me.txtStartTime.TabIndex = 12
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(12, 22)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(55, 13)
+        Me.Label6.TabIndex = 11
+        Me.Label6.Text = "Start Time"
         '
         'Label10
         '
@@ -240,23 +257,6 @@ Partial Class frmPrint
         Me.lblTotalPrice.Size = New System.Drawing.Size(122, 37)
         Me.lblTotalPrice.TabIndex = 15
         Me.lblTotalPrice.Text = "TOTAL"
-        '
-        'txtRate
-        '
-        Me.txtRate.Location = New System.Drawing.Point(121, 123)
-        Me.txtRate.Name = "txtRate"
-        Me.txtRate.ReadOnly = True
-        Me.txtRate.Size = New System.Drawing.Size(147, 20)
-        Me.txtRate.TabIndex = 17
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(12, 126)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(51, 13)
-        Me.Label11.TabIndex = 16
-        Me.Label11.Text = "Rate/min"
         '
         'GroupBox2
         '
