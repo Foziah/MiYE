@@ -102,6 +102,12 @@
     <Compile Include="frmOperations.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmPrint.Designer.vb">
+      <DependentUpon>frmPrint.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrint.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmViewAppointments.Designer.vb">
       <DependentUpon>frmViewAppointments.vb</DependentUpon>
     </Compile>
@@ -171,6 +177,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmOperations.resx">
       <DependentUpon>frmOperations.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrint.resx">
+      <DependentUpon>frmPrint.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmViewAppointments.resx">
       <DependentUpon>frmViewAppointments.vb</DependentUpon>

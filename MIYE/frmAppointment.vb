@@ -1,7 +1,7 @@
 ﻿Imports System.Globalization
 
 Public Class frmAppointment
-
+    Dim totalPrice As Decimal = 0
     Private Sub frmAppointment_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim dt As DataTable = TblGuestsTableAdapter.GetDataBynAME()
         cbGuestID.DataSource = dt
@@ -53,7 +53,8 @@ Public Class frmAppointment
         Dim serviceDate As Date = DateTimePicker1.Text
         Dim endTime As String = lblEndTime.Text
         Dim appointments As New MIYEDatasetTableAdapters.tblAppointmentsTableAdapter
-        appointments.Insert(cbGuestID.SelectedValue, cbServiceType.SelectedValue, serviceDate, TimeSpan.Parse(startTime), TimeSpan.Parse(endTime), Val(lblTotalPrice.Text))
+        appointments.Insert(cbGuestID.SelectedValue, cbServiceType.SelectedValue, serviceDate, TimeSpan.Parse(startTime), TimeSpan.Parse(endTime), totalPrice)
+        MessageBox.Show("Appointment Saved Successfully.")
     End Sub
 
     Private Sub cbServices_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbServices.SelectedIndexChanged
@@ -68,7 +69,7 @@ Public Class frmAppointment
     Sub ProcessTime()
         Dim startTime As String = cbStartHrs.Text + ":" + cbStartMinutes.Text
         Dim serviceDate As Date = DateTimePicker1.Text
-        Dim totalPrice As Decimal = 0
+
         Dim cost As Decimal = TblServicesTableAdapter.GetCostByServiceID(cbServices.SelectedValue)
         Dim serviceDateTime As String = serviceDate.ToShortDateString() + " " + startTime
         Dim endDateTime As String = ""
