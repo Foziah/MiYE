@@ -1,5 +1,5 @@
 ﻿Public Class frmViewAppointments
-
+    Public appointmentID As Decimal = 0
     Private Sub frmViewAppointments_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'MIYEDataset.viewAppointments' table. You can move, or remove it, as needed.
         Me.ViewAppointmentsTableAdapter.Fill(Me.MIYEDataset.viewAppointments)
@@ -24,5 +24,16 @@
     Private Sub btnShowALl_Click(sender As Object, e As EventArgs) Handles btnShowALl.Click
         'View All Appointments
         Me.ViewAppointmentsTableAdapter.Fill(Me.MIYEDataset.viewAppointments)
+    End Sub
+
+
+
+    Private Sub gvAppointments_RowEnter(sender As Object, e As DataGridViewCellEventArgs) Handles gvAppointments.RowEnter
+        appointmentID = gvAppointments.Rows(e.RowIndex).Cells(0).Value
+        lblAppointmentID.Text = appointmentID.ToString()
+    End Sub
+
+    Private Sub btnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
+        frmPrint.ShowDialog()
     End Sub
 End Class

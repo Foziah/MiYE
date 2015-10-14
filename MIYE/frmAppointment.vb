@@ -33,13 +33,39 @@ Public Class frmAppointment
 
 
     Private Sub btnMakeAppointment_Click(sender As Object, e As EventArgs) Handles btnMakeAppointment.Click
-        'This function saves the appointment in database.
+        Dim appointments As New MIYEDatasetTableAdapters.tblAppointmentsTableAdapter
         Dim startTime As String = cbStartHrs.Text + ":" + cbStartMinutes.Text 'concatenates hours:minutes
         Dim serviceDate As Date = DateTimePicker1.Text 'get service date
         Dim endTime As String = lblEndTime.Text 'get end time, end time is calculated using function ProcessTime()
-        Dim appointments As New MIYEDatasetTableAdapters.tblAppointmentsTableAdapter
-        appointments.Insert(cbGuestID.SelectedValue, cbServiceType.SelectedValue, serviceDate, TimeSpan.Parse(startTime), TimeSpan.Parse(endTime), totalPrice) 'Inserting data in database
-        MessageBox.Show("Appointment Saved Successfully.")
+        If cbServices.SelectedValue = 1 Then
+            'Mineral Bath Services
+            If appointments.GetDataByGuestID(Date.Today.ToShortDateString(), startTime, cbGuestID.SelectedValue).Rows.Count > 0 Then
+                'A guest cannot reserve overlapping services
+                MessageBox.Show("A guest cannot reserve overlapping services")
+            Else
+                'This function saves the appointment in database.
+                appointments.Insert(cbGuestID.SelectedValue, cbServiceType.SelectedValue, serviceDate, TimeSpan.Parse(startTime), TimeSpan.Parse(endTime), totalPrice) 'Inserting data in database
+                MessageBox.Show("Appointment Saved Successfully.")
+            End If
+        Else
+            'Services Other Than Mineral Bath
+            If appointments.GetDataByAppointmentExists(Date.Today.ToShortDateString(), startTime, cbServiceType.SelectedValue).Rows.Count > 0 Then
+                'Appointment for someone already exists
+                MessageBox.Show("Only one guest at a time may reserve any service.")
+            Else
+                If appointments.GetDataByGuestID(Date.Today.ToShortDateString(), startTime, cbGuestID.SelectedValue).Rows.Count > 0 Then
+                    'A guest cannot reserve overlapping services
+                    MessageBox.Show("A guest cannot reserve overlapping services")
+                Else
+                    'This function saves the appointment in database.
+                    appointments.Insert(cbGuestID.SelectedValue, cbServiceType.SelectedValue, serviceDate, TimeSpan.Parse(startTime), TimeSpan.Parse(endTime), totalPrice) 'Inserting data in database
+                    MessageBox.Show("Appointment Saved Successfully.")
+                End If
+            End If
+        End If
+
+
+       
     End Sub
 
     Private Sub cbServices_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbServices.SelectedIndexChanged
@@ -56,25 +82,29 @@ Public Class frmAppointment
 
     'this function updates time and cost when values are changed on the form.
     Sub ProcessTime()
-        Dim startTime As String = cbStartHrs.Text + ":" + cbStartMinutes.Text
-        Dim serviceDate As Date = DateTimePicker1.Text
-        'Get cost of selected service from database
-        Dim cost As Decimal = TblServicesTableAdapter.GetCostByServiceID(cbServices.SelectedValue)
-        Dim serviceDateTime As String = serviceDate.ToShortDateString() + " " + startTime
-        Dim endDateTime As String = ""
-        'Check if service is 30 minutes or 60 minutes
-        If cbServiceDuration.SelectedIndex = 0 Then
-            '30 Minutes
-            endDateTime = Convert.ToDateTime(serviceDateTime).AddMinutes(30)
-            totalPrice = cost * 30
-        Else
-            '60 Minutes
-            endDateTime = Convert.ToDateTime(serviceDateTime).AddMinutes(60)
-            totalPrice = cost * 60
-        End If
-        Dim dtt As DateTime = Convert.ToDateTime(endDateTime)
-        Dim convertedTime As String = dtt.ToString("HH:mm")
-        lblEndTime.Text = convertedTime 'displaying end time on form
-        lblTotalPrice.Text = "$ " + totalPrice.ToString() 'displaying total price on form
+        Try
+            Dim startTime As String = cbStartHrs.Text + ":" + cbStartMinutes.Text
+            Dim serviceDate As Date = DateTimePicker1.Text
+            'Get cost of selected service from database
+            Dim cost As Decimal = TblServicesTableAdapter.GetCostByServiceID(cbServices.SelectedValue)
+            Dim serviceDateTime As String = serviceDate.ToShortDateString() + " " + startTime
+            Dim endDateTime As String = ""
+            'Check if service is 30 minutes or 60 minutes
+            If cbServiceDuration.SelectedIndex = 0 Then
+                '30 Minutes
+                endDateTime = Convert.ToDateTime(serviceDateTime).AddMinutes(30)
+                totalPrice = cost * 30
+            Else
+                '60 Minutes
+                endDateTime = Convert.ToDateTime(serviceDateTime).AddMinutes(60)
+                totalPrice = cost * 60
+            End If
+            Dim dtt As DateTime = Convert.ToDateTime(endDateTime)
+            Dim convertedTime As String = dtt.ToString("HH:mm")
+            lblEndTime.Text = convertedTime 'displaying end time on form
+            lblTotalPrice.Text = "$ " + totalPrice.ToString() 'displaying total price on form
+        Catch ex As Exception
+
+        End Try
     End Sub
 End Class

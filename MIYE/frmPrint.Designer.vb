@@ -46,6 +46,9 @@ Partial Class frmPrint
         Me.Label10 = New System.Windows.Forms.Label()
         Me.lblTotalPrice = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.btnPrint = New System.Windows.Forms.Button()
+        Me.PrintDialog1 = New System.Windows.Forms.PrintDialog()
+        Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -260,18 +263,33 @@ Partial Class frmPrint
         '
         'GroupBox2
         '
-        Me.GroupBox2.Location = New System.Drawing.Point(98, 26)
+        Me.GroupBox2.Location = New System.Drawing.Point(80, 24)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(338, 419)
         Me.GroupBox2.TabIndex = 16
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Summary"
         '
+        'btnPrint
+        '
+        Me.btnPrint.Location = New System.Drawing.Point(439, 24)
+        Me.btnPrint.Name = "btnPrint"
+        Me.btnPrint.Size = New System.Drawing.Size(75, 23)
+        Me.btnPrint.TabIndex = 17
+        Me.btnPrint.Text = "Print"
+        Me.btnPrint.UseVisualStyleBackColor = True
+        '
+        'PrintDialog1
+        '
+        Me.PrintDialog1.PrintToFile = True
+        Me.PrintDialog1.UseEXDialog = True
+        '
         'frmPrint
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(567, 485)
+        Me.ClientSize = New System.Drawing.Size(526, 485)
+        Me.Controls.Add(Me.btnPrint)
         Me.Controls.Add(Me.lblTotalPrice)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.GroupBox1)
@@ -287,6 +305,7 @@ Partial Class frmPrint
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.GroupBox2)
         Me.Name = "frmPrint"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Print"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
@@ -318,4 +337,7 @@ Partial Class frmPrint
     Friend WithEvents txtRate As System.Windows.Forms.TextBox
     Friend WithEvents Label11 As System.Windows.Forms.Label
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
+    Friend WithEvents btnPrint As System.Windows.Forms.Button
+    Friend WithEvents PrintDialog1 As System.Windows.Forms.PrintDialog
+    Friend WithEvents PrintDocument1 As System.Drawing.Printing.PrintDocument
 End Class

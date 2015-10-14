@@ -24,16 +24,19 @@ Partial Class frmViewAppointments
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.gvAppointments = New System.Windows.Forms.DataGridView()
+        Me.ViewAppointmentsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.MIYEDataset = New MIYE.MIYEDataset()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.txtAppointmentID = New System.Windows.Forms.TextBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.txtGuestName = New System.Windows.Forms.TextBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.txtGuestNumber = New System.Windows.Forms.TextBox()
-        Me.ViewAppointmentsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.MIYEDataset = New MIYE.MIYEDataset()
         Me.ViewAppointmentsTableAdapter = New MIYE.MIYEDatasetTableAdapters.viewAppointmentsTableAdapter()
         Me.btnShowALl = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lblAppointmentID = New System.Windows.Forms.Label()
+        Me.btnPrint = New System.Windows.Forms.Button()
         Me.AppointmentIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GuestIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -50,11 +53,11 @@ Partial Class frmViewAppointments
         Me.TypeIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Expr2DataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.gvAppointments, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ViewAppointmentsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.MIYEDataset, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
-        CType(Me.ViewAppointmentsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.MIYEDataset, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'gvAppointments
@@ -73,6 +76,16 @@ Partial Class frmViewAppointments
         Me.gvAppointments.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.gvAppointments.Size = New System.Drawing.Size(871, 344)
         Me.gvAppointments.TabIndex = 0
+        '
+        'ViewAppointmentsBindingSource
+        '
+        Me.ViewAppointmentsBindingSource.DataMember = "viewAppointments"
+        Me.ViewAppointmentsBindingSource.DataSource = Me.MIYEDataset
+        '
+        'MIYEDataset
+        '
+        Me.MIYEDataset.DataSetName = "MIYEDataset"
+        Me.MIYEDataset.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'GroupBox1
         '
@@ -125,16 +138,6 @@ Partial Class frmViewAppointments
         Me.txtGuestNumber.Size = New System.Drawing.Size(283, 20)
         Me.txtGuestNumber.TabIndex = 0
         '
-        'ViewAppointmentsBindingSource
-        '
-        Me.ViewAppointmentsBindingSource.DataMember = "viewAppointments"
-        Me.ViewAppointmentsBindingSource.DataSource = Me.MIYEDataset
-        '
-        'MIYEDataset
-        '
-        Me.MIYEDataset.DataSetName = "MIYEDataset"
-        Me.MIYEDataset.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'ViewAppointmentsTableAdapter
         '
         Me.ViewAppointmentsTableAdapter.ClearBeforeFill = True
@@ -147,6 +150,32 @@ Partial Class frmViewAppointments
         Me.btnShowALl.TabIndex = 4
         Me.btnShowALl.Text = "Show All"
         Me.btnShowALl.UseVisualStyleBackColor = True
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(336, 121)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(80, 13)
+        Me.Label1.TabIndex = 5
+        Me.Label1.Text = "Appointment ID"
+        '
+        'lblAppointmentID
+        '
+        Me.lblAppointmentID.AutoSize = True
+        Me.lblAppointmentID.Location = New System.Drawing.Point(422, 122)
+        Me.lblAppointmentID.Name = "lblAppointmentID"
+        Me.lblAppointmentID.Size = New System.Drawing.Size(0, 13)
+        Me.lblAppointmentID.TabIndex = 6
+        '
+        'btnPrint
+        '
+        Me.btnPrint.Location = New System.Drawing.Point(532, 116)
+        Me.btnPrint.Name = "btnPrint"
+        Me.btnPrint.Size = New System.Drawing.Size(75, 23)
+        Me.btnPrint.TabIndex = 7
+        Me.btnPrint.Text = "Print"
+        Me.btnPrint.UseVisualStyleBackColor = True
         '
         'AppointmentIDDataGridViewTextBoxColumn
         '
@@ -217,6 +246,7 @@ Partial Class frmViewAppointments
         '
         'TypeNameDataGridViewTextBoxColumn
         '
+        Me.TypeNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.TypeNameDataGridViewTextBoxColumn.DataPropertyName = "TypeName"
         Me.TypeNameDataGridViewTextBoxColumn.HeaderText = "Service"
         Me.TypeNameDataGridViewTextBoxColumn.Name = "TypeNameDataGridViewTextBoxColumn"
@@ -264,6 +294,9 @@ Partial Class frmViewAppointments
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(871, 497)
+        Me.Controls.Add(Me.btnPrint)
+        Me.Controls.Add(Me.lblAppointmentID)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnShowALl)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
@@ -273,15 +306,16 @@ Partial Class frmViewAppointments
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "View Appointments"
         CType(Me.gvAppointments, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ViewAppointmentsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.MIYEDataset, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
-        CType(Me.ViewAppointmentsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.MIYEDataset, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents gvAppointments As System.Windows.Forms.DataGridView
@@ -295,6 +329,9 @@ Partial Class frmViewAppointments
     Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
     Friend WithEvents txtGuestNumber As System.Windows.Forms.TextBox
     Friend WithEvents btnShowALl As System.Windows.Forms.Button
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents lblAppointmentID As System.Windows.Forms.Label
+    Friend WithEvents btnPrint As System.Windows.Forms.Button
     Friend WithEvents AppointmentIDDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents GuestIDDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents FNameDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
