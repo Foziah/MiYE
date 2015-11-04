@@ -1697,6 +1697,10 @@ Partial Public Class MIYEDataset
 
         Private columnPrice As Global.System.Data.DataColumn
 
+        Private columnTimestamp As Global.System.Data.DataColumn
+
+        Private columnStatus As Global.System.Data.DataColumn
+
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Sub New()
@@ -1789,6 +1793,22 @@ Partial Public Class MIYEDataset
         End Property
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property TimestampColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnTimestamp
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property StatusColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnStatus
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
          Global.System.ComponentModel.Browsable(False)> _
         Public ReadOnly Property Count() As Integer
@@ -1825,9 +1845,9 @@ Partial Public Class MIYEDataset
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Overloads Function AddtblAppointmentsRow(ByVal parenttblGuestsRowByFK_tblAppointments_tblGuests As tblGuestsRow, ByVal parenttblServiceTypesRowByFK_tblAppointments_tblServiceTypes As tblServiceTypesRow, ByVal DateOfService As Date, ByVal StartingTime As System.TimeSpan, ByVal EndingTime As System.TimeSpan, ByVal Price As Decimal) As tblAppointmentsRow
+        Public Overloads Function AddtblAppointmentsRow(ByVal parenttblGuestsRowByFK_tblAppointments_tblGuests As tblGuestsRow, ByVal parenttblServiceTypesRowByFK_tblAppointments_tblServiceTypes As tblServiceTypesRow, ByVal DateOfService As Date, ByVal StartingTime As System.TimeSpan, ByVal EndingTime As System.TimeSpan, ByVal Price As Decimal, ByVal Timestamp As Date, ByVal Status As String) As tblAppointmentsRow
             Dim rowtblAppointmentsRow As tblAppointmentsRow = CType(Me.NewRow, tblAppointmentsRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, Nothing, Nothing, DateOfService, StartingTime, EndingTime, Price}
+            Dim columnValuesArray() As Object = New Object() {Nothing, Nothing, Nothing, DateOfService, StartingTime, EndingTime, Price, Timestamp, Status}
             If (Not (parenttblGuestsRowByFK_tblAppointments_tblGuests) Is Nothing) Then
                 columnValuesArray(1) = parenttblGuestsRowByFK_tblAppointments_tblGuests(0)
             End If
@@ -1869,6 +1889,8 @@ Partial Public Class MIYEDataset
             Me.columnStartingTime = MyBase.Columns("StartingTime")
             Me.columnEndingTime = MyBase.Columns("EndingTime")
             Me.columnPrice = MyBase.Columns("Price")
+            Me.columnTimestamp = MyBase.Columns("Timestamp")
+            Me.columnStatus = MyBase.Columns("Status")
         End Sub
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
@@ -1888,6 +1910,10 @@ Partial Public Class MIYEDataset
             MyBase.Columns.Add(Me.columnEndingTime)
             Me.columnPrice = New Global.System.Data.DataColumn("Price", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnPrice)
+            Me.columnTimestamp = New Global.System.Data.DataColumn("Timestamp", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnTimestamp)
+            Me.columnStatus = New Global.System.Data.DataColumn("Status", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnStatus)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnAppointmentID}, True))
             Me.columnAppointmentID.AutoIncrement = True
             Me.columnAppointmentID.AutoIncrementSeed = -1
@@ -1895,6 +1921,7 @@ Partial Public Class MIYEDataset
             Me.columnAppointmentID.AllowDBNull = False
             Me.columnAppointmentID.ReadOnly = True
             Me.columnAppointmentID.Unique = True
+            Me.columnStatus.MaxLength = 50
         End Sub
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
@@ -2062,6 +2089,14 @@ Partial Public Class MIYEDataset
 
         Private columnTypeName As Global.System.Data.DataColumn
 
+        Private columnTimestamp As Global.System.Data.DataColumn
+
+        Private columnStatus As Global.System.Data.DataColumn
+
+        Private columnServiceName As Global.System.Data.DataColumn
+
+        Private columnCost As Global.System.Data.DataColumn
+
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Sub New()
@@ -2218,6 +2253,38 @@ Partial Public Class MIYEDataset
         End Property
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property TimestampColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnTimestamp
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property StatusColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnStatus
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property ServiceNameColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnServiceName
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property CostColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnCost
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
          Global.System.ComponentModel.Browsable(False)> _
         Public ReadOnly Property Count() As Integer
@@ -2254,9 +2321,28 @@ Partial Public Class MIYEDataset
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Overloads Function AddviewAppointmentsRow(ByVal GuestID As Decimal, ByVal FName As String, ByVal LName As String, ByVal Email As String, ByVal Phone As String, ByVal AppointmentID As Decimal, ByVal Expr1 As Decimal, ByVal ServiceID As Integer, ByVal DateOfService As Date, ByVal StartingTime As System.TimeSpan, ByVal EndingTime As System.TimeSpan, ByVal Price As Decimal, ByVal TypeID As Integer, ByVal Expr2 As Integer, ByVal TypeName As String) As viewAppointmentsRow
+        Public Overloads Function AddviewAppointmentsRow( _
+                    ByVal GuestID As Decimal, _
+                    ByVal FName As String, _
+                    ByVal LName As String, _
+                    ByVal Email As String, _
+                    ByVal Phone As String, _
+                    ByVal AppointmentID As Decimal, _
+                    ByVal Expr1 As Decimal, _
+                    ByVal ServiceID As Integer, _
+                    ByVal DateOfService As Date, _
+                    ByVal StartingTime As System.TimeSpan, _
+                    ByVal EndingTime As System.TimeSpan, _
+                    ByVal Price As Decimal, _
+                    ByVal TypeID As Integer, _
+                    ByVal Expr2 As Integer, _
+                    ByVal TypeName As String, _
+                    ByVal Timestamp As Date, _
+                    ByVal Status As String, _
+                    ByVal ServiceName As String, _
+                    ByVal Cost As Decimal) As viewAppointmentsRow
             Dim rowviewAppointmentsRow As viewAppointmentsRow = CType(Me.NewRow, viewAppointmentsRow)
-            Dim columnValuesArray() As Object = New Object() {GuestID, FName, LName, Email, Phone, AppointmentID, Expr1, ServiceID, DateOfService, StartingTime, EndingTime, Price, TypeID, Expr2, TypeName}
+            Dim columnValuesArray() As Object = New Object() {GuestID, FName, LName, Email, Phone, AppointmentID, Expr1, ServiceID, DateOfService, StartingTime, EndingTime, Price, TypeID, Expr2, TypeName, Timestamp, Status, ServiceName, Cost}
             rowviewAppointmentsRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowviewAppointmentsRow)
             Return rowviewAppointmentsRow
@@ -2300,6 +2386,10 @@ Partial Public Class MIYEDataset
             Me.columnTypeID = MyBase.Columns("TypeID")
             Me.columnExpr2 = MyBase.Columns("Expr2")
             Me.columnTypeName = MyBase.Columns("TypeName")
+            Me.columnTimestamp = MyBase.Columns("Timestamp")
+            Me.columnStatus = MyBase.Columns("Status")
+            Me.columnServiceName = MyBase.Columns("ServiceName")
+            Me.columnCost = MyBase.Columns("Cost")
         End Sub
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
@@ -2335,6 +2425,14 @@ Partial Public Class MIYEDataset
             MyBase.Columns.Add(Me.columnExpr2)
             Me.columnTypeName = New Global.System.Data.DataColumn("TypeName", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnTypeName)
+            Me.columnTimestamp = New Global.System.Data.DataColumn("Timestamp", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnTimestamp)
+            Me.columnStatus = New Global.System.Data.DataColumn("Status", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnStatus)
+            Me.columnServiceName = New Global.System.Data.DataColumn("ServiceName", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnServiceName)
+            Me.columnCost = New Global.System.Data.DataColumn("Cost", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCost)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnGuestID, Me.columnAppointmentID, Me.columnTypeID}, True))
             Me.columnGuestID.AllowDBNull = False
             Me.columnFName.MaxLength = 50
@@ -2344,6 +2442,8 @@ Partial Public Class MIYEDataset
             Me.columnAppointmentID.AllowDBNull = False
             Me.columnTypeID.AllowDBNull = False
             Me.columnTypeName.MaxLength = 100
+            Me.columnStatus.MaxLength = 50
+            Me.columnServiceName.MaxLength = 500
         End Sub
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
@@ -3037,6 +3137,36 @@ Partial Public Class MIYEDataset
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property Timestamp() As Date
+            Get
+                Try
+                    Return CType(Me(Me.tabletblAppointments.TimestampColumn), Date)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Timestamp' in table 'tblAppointments' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As Date)
+                Me(Me.tabletblAppointments.TimestampColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property Status() As String
+            Get
+                Try
+                    Return CType(Me(Me.tabletblAppointments.StatusColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Status' in table 'tblAppointments' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tabletblAppointments.StatusColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Property tblGuestsRow() As tblGuestsRow
             Get
                 Return CType(Me.GetParentRow(Me.Table.ParentRelations("FK_tblAppointments_tblGuests")), tblGuestsRow)
@@ -3127,6 +3257,30 @@ Partial Public Class MIYEDataset
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Sub SetPriceNull()
             Me(Me.tabletblAppointments.PriceColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsTimestampNull() As Boolean
+            Return Me.IsNull(Me.tabletblAppointments.TimestampColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetTimestampNull()
+            Me(Me.tabletblAppointments.TimestampColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsStatusNull() As Boolean
+            Return Me.IsNull(Me.tabletblAppointments.StatusColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetStatusNull()
+            Me(Me.tabletblAppointments.StatusColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
 
@@ -3360,6 +3514,66 @@ Partial Public Class MIYEDataset
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property Timestamp() As Date
+            Get
+                Try
+                    Return CType(Me(Me.tableviewAppointments.TimestampColumn), Date)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Timestamp' in table 'viewAppointments' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As Date)
+                Me(Me.tableviewAppointments.TimestampColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property Status() As String
+            Get
+                Try
+                    Return CType(Me(Me.tableviewAppointments.StatusColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Status' in table 'viewAppointments' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tableviewAppointments.StatusColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property ServiceName() As String
+            Get
+                Try
+                    Return CType(Me(Me.tableviewAppointments.ServiceNameColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'ServiceName' in table 'viewAppointments' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tableviewAppointments.ServiceNameColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property Cost() As Decimal
+            Get
+                Try
+                    Return CType(Me(Me.tableviewAppointments.CostColumn), Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Cost' in table 'viewAppointments' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As Decimal)
+                Me(Me.tableviewAppointments.CostColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Function IsFNameNull() As Boolean
             Return Me.IsNull(Me.tableviewAppointments.FNameColumn)
         End Function
@@ -3500,6 +3714,54 @@ Partial Public Class MIYEDataset
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Sub SetTypeNameNull()
             Me(Me.tableviewAppointments.TypeNameColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsTimestampNull() As Boolean
+            Return Me.IsNull(Me.tableviewAppointments.TimestampColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetTimestampNull()
+            Me(Me.tableviewAppointments.TimestampColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsStatusNull() As Boolean
+            Return Me.IsNull(Me.tableviewAppointments.StatusColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetStatusNull()
+            Me(Me.tableviewAppointments.StatusColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsServiceNameNull() As Boolean
+            Return Me.IsNull(Me.tableviewAppointments.ServiceNameColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetServiceNameNull()
+            Me(Me.tableviewAppointments.ServiceNameColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsCostNull() As Boolean
+            Return Me.IsNull(Me.tableviewAppointments.CostColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetCostNull()
+            Me(Me.tableviewAppointments.CostColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
 
@@ -5390,6 +5652,8 @@ Namespace MIYEDatasetTableAdapters
             tableMapping.ColumnMappings.Add("StartingTime", "StartingTime")
             tableMapping.ColumnMappings.Add("EndingTime", "EndingTime")
             tableMapping.ColumnMappings.Add("Price", "Price")
+            tableMapping.ColumnMappings.Add("Timestamp", "Timestamp")
+            tableMapping.ColumnMappings.Add("Status", "Status")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
@@ -5401,7 +5665,9 @@ Namespace MIYEDatasetTableAdapters
                 "D [StartingTime] IS NULL) OR ([StartingTime] = @Original_StartingTime)) AND ((@I" & _
                 "sNull_EndingTime = 1 AND [EndingTime] IS NULL) OR ([EndingTime] = @Original_Endi" & _
                 "ngTime)) AND ((@IsNull_Price = 1 AND [Price] IS NULL) OR ([Price] = @Original_Pr" & _
-                "ice)))"
+                "ice)) AND ((@IsNull_Timestamp = 1 AND [Timestamp] IS NULL) OR ([Timestamp] = @Or" & _
+                "iginal_Timestamp)) AND ((@IsNull_Status = 1 AND [Status] IS NULL) OR ([Status] =" & _
+                " @Original_Status)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_AppointmentID", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "AppointmentID", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_GuestID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GuestID", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
@@ -5416,13 +5682,18 @@ Namespace MIYEDatasetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_EndingTime", Global.System.Data.SqlDbType.Time, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "EndingTime", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Price", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Price", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Price", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "Price", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Timestamp", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Timestamp", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Timestamp", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Timestamp", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Status", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Status", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Status", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Status", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
             Me._adapter.InsertCommand.CommandText = "INSERT INTO [tblAppointments] ([GuestID], [ServiceID], [DateOfService], [Starting" & _
-                "Time], [EndingTime], [Price]) VALUES (@GuestID, @ServiceID, @DateOfService, @Sta" & _
-                "rtingTime, @EndingTime, @Price);" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "SELECT AppointmentID, GuestID, ServiceID, Date" & _
-                "OfService, StartingTime, EndingTime, Price FROM tblAppointments WHERE (Appointme" & _
-                "ntID = SCOPE_IDENTITY())"
+                "Time], [EndingTime], [Price], [Timestamp], [Status]) VALUES (@GuestID, @ServiceI" & _
+                "D, @DateOfService, @StartingTime, @EndingTime, @Price, @Timestamp, @Status);" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "SE" & _
+                "LECT AppointmentID, GuestID, ServiceID, DateOfService, StartingTime, EndingTime," & _
+                " Price, Timestamp, Status FROM tblAppointments WHERE (AppointmentID = SCOPE_IDEN" & _
+                "TITY())"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@GuestID", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "GuestID", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ServiceID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ServiceID", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
@@ -5430,20 +5701,25 @@ Namespace MIYEDatasetTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@StartingTime", Global.System.Data.SqlDbType.Time, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "StartingTime", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@EndingTime", Global.System.Data.SqlDbType.Time, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "EndingTime", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Price", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "Price", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Timestamp", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Timestamp", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Status", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Status", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
             Me._adapter.UpdateCommand.CommandText = "UPDATE [tblAppointments] SET [GuestID] = @GuestID, [ServiceID] = @ServiceID, [Dat" & _
                 "eOfService] = @DateOfService, [StartingTime] = @StartingTime, [EndingTime] = @En" & _
-                "dingTime, [Price] = @Price WHERE (([AppointmentID] = @Original_AppointmentID) AN" & _
-                "D ((@IsNull_GuestID = 1 AND [GuestID] IS NULL) OR ([GuestID] = @Original_GuestID" & _
-                ")) AND ((@IsNull_ServiceID = 1 AND [ServiceID] IS NULL) OR ([ServiceID] = @Origi" & _
-                "nal_ServiceID)) AND ((@IsNull_DateOfService = 1 AND [DateOfService] IS NULL) OR " & _
-                "([DateOfService] = @Original_DateOfService)) AND ((@IsNull_StartingTime = 1 AND " & _
-                "[StartingTime] IS NULL) OR ([StartingTime] = @Original_StartingTime)) AND ((@IsN" & _
-                "ull_EndingTime = 1 AND [EndingTime] IS NULL) OR ([EndingTime] = @Original_Ending" & _
-                "Time)) AND ((@IsNull_Price = 1 AND [Price] IS NULL) OR ([Price] = @Original_Pric" & _
-                "e)));" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "SELECT AppointmentID, GuestID, ServiceID, DateOfService, StartingTime, En" & _
-                "dingTime, Price FROM tblAppointments WHERE (AppointmentID = @AppointmentID)"
+                "dingTime, [Price] = @Price, [Timestamp] = @Timestamp, [Status] = @Status WHERE (" & _
+                "([AppointmentID] = @Original_AppointmentID) AND ((@IsNull_GuestID = 1 AND [Guest" & _
+                "ID] IS NULL) OR ([GuestID] = @Original_GuestID)) AND ((@IsNull_ServiceID = 1 AND" & _
+                " [ServiceID] IS NULL) OR ([ServiceID] = @Original_ServiceID)) AND ((@IsNull_Date" & _
+                "OfService = 1 AND [DateOfService] IS NULL) OR ([DateOfService] = @Original_DateO" & _
+                "fService)) AND ((@IsNull_StartingTime = 1 AND [StartingTime] IS NULL) OR ([Start" & _
+                "ingTime] = @Original_StartingTime)) AND ((@IsNull_EndingTime = 1 AND [EndingTime" & _
+                "] IS NULL) OR ([EndingTime] = @Original_EndingTime)) AND ((@IsNull_Price = 1 AND" & _
+                " [Price] IS NULL) OR ([Price] = @Original_Price)) AND ((@IsNull_Timestamp = 1 AN" & _
+                "D [Timestamp] IS NULL) OR ([Timestamp] = @Original_Timestamp)) AND ((@IsNull_Sta" & _
+                "tus = 1 AND [Status] IS NULL) OR ([Status] = @Original_Status)));" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "SELECT Appoin" & _
+                "tmentID, GuestID, ServiceID, DateOfService, StartingTime, EndingTime, Price, Tim" & _
+                "estamp, Status FROM tblAppointments WHERE (AppointmentID = @AppointmentID)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@GuestID", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "GuestID", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ServiceID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ServiceID", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
@@ -5451,6 +5727,8 @@ Namespace MIYEDatasetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@StartingTime", Global.System.Data.SqlDbType.Time, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "StartingTime", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@EndingTime", Global.System.Data.SqlDbType.Time, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "EndingTime", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Price", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "Price", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Timestamp", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Timestamp", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Status", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Status", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_AppointmentID", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "AppointmentID", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_GuestID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GuestID", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_GuestID", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "GuestID", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
@@ -5464,6 +5742,10 @@ Namespace MIYEDatasetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_EndingTime", Global.System.Data.SqlDbType.Time, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "EndingTime", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Price", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Price", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Price", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "Price", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Timestamp", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Timestamp", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Timestamp", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Timestamp", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Status", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Status", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Status", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Status", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@AppointmentID", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 0, "AppointmentID", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
         End Sub
 
@@ -5477,31 +5759,52 @@ Namespace MIYEDatasetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(2) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(5) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT        *" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "FROM            tblAppointments"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "SELECT        AppointmentID, GuestID, ServiceID, DateOfService, StartingTime, End" & _
-                "ingTime, Price" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "FROM            tblAppointments" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "WHERE        (DateOfService = @" & _
-                "dateOfService) AND (StartingTime <= @time) AND (EndingTime >= @time) AND (Servic" & _
-                "eID = @serviceID)"
+            Me._commandCollection(1).CommandText = "SELECT AppointmentID, DateOfService, EndingTime, GuestID, Price, ServiceID, Start" & _
+                "ingTime, Status, Timestamp FROM tblAppointments WHERE (DateOfService = @dateOfSe" & _
+                "rvice) AND (StartingTime <= @time) AND (EndingTime >= @time) AND (ServiceID = @s" & _
+                "erviceID)"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@dateOfService", Global.System.Data.SqlDbType.[Date], 3, Global.System.Data.ParameterDirection.Input, 0, 0, "DateOfService", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@time", Global.System.Data.SqlDbType.Time, 5, Global.System.Data.ParameterDirection.Input, 0, 0, "StartingTime", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@serviceID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "ServiceID", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
             Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(2).Connection = Me.Connection
-            Me._commandCollection(2).CommandText = "SELECT        AppointmentID, GuestID, ServiceID, DateOfService, StartingTime, End" & _
-                "ingTime, Price" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "FROM            tblAppointments" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "WHERE        (DateOfService = @" & _
-                "dateOfService) AND (StartingTime <= @time) AND (EndingTime >= @time) AND (GuestI" & _
-                "D = @guestID)"
+            Me._commandCollection(2).CommandText = "SELECT AppointmentID, DateOfService, EndingTime, GuestID, Price, ServiceID, Start" & _
+                "ingTime, Status, Timestamp FROM tblAppointments WHERE (DateOfService = @dateOfSe" & _
+                "rvice) AND (StartingTime <= @time) AND (EndingTime >= @time) AND (GuestID = @gue" & _
+                "stID)"
             Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@dateOfService", Global.System.Data.SqlDbType.[Date], 3, Global.System.Data.ParameterDirection.Input, 0, 0, "DateOfService", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@time", Global.System.Data.SqlDbType.Time, 5, Global.System.Data.ParameterDirection.Input, 0, 0, "StartingTime", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@guestID", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 0, "GuestID", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+            Me._commandCollection(3) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(3).Connection = Me.Connection
+            Me._commandCollection(3).CommandText = "SELECT        Status" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "FROM            tblAppointments" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "WHERE        (AppointmentI" & _
+                "D = @appId)"
+            Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@appId", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 0, "AppointmentID", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+            Me._commandCollection(4) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(4).Connection = Me.Connection
+            Me._commandCollection(4).CommandText = "UPDATE       tblAppointments" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "SET                Status = @Status" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "WHERE        (" & _
+                "AppointmentID = @Original_AppointmentID)"
+            Me._commandCollection(4).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Status", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "Status", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_AppointmentID", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 0, "AppointmentID", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._commandCollection(5) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(5).Connection = Me.Connection
+            Me._commandCollection(5).CommandText = "UPDATE       tblAppointments" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "SET                Price = @Price, Status = @Status" & _
+                "" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "WHERE        (AppointmentID = @Original_AppointmentID)"
+            Me._commandCollection(5).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Price", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 0, "Price", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+            Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Status", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "Status", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+            Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_AppointmentID", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 0, "AppointmentID", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
         End Sub
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
@@ -5668,7 +5971,7 @@ Namespace MIYEDatasetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"), _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, True)> _
-        Public Overridable Overloads Function Delete(ByVal Original_AppointmentID As Decimal, ByVal Original_GuestID As Global.System.Nullable(Of Decimal), ByVal Original_ServiceID As Global.System.Nullable(Of Integer), ByVal Original_DateOfService As Global.System.Nullable(Of Date), ByVal Original_StartingTime As Global.System.Nullable(Of Global.System.TimeSpan), ByVal Original_EndingTime As Global.System.Nullable(Of Global.System.TimeSpan), ByVal Original_Price As Global.System.Nullable(Of Decimal)) As Integer
+        Public Overridable Overloads Function Delete(ByVal Original_AppointmentID As Decimal, ByVal Original_GuestID As Global.System.Nullable(Of Decimal), ByVal Original_ServiceID As Global.System.Nullable(Of Integer), ByVal Original_DateOfService As Global.System.Nullable(Of Date), ByVal Original_StartingTime As Global.System.Nullable(Of Global.System.TimeSpan), ByVal Original_EndingTime As Global.System.Nullable(Of Global.System.TimeSpan), ByVal Original_Price As Global.System.Nullable(Of Decimal), ByVal Original_Timestamp As Global.System.Nullable(Of Date), ByVal Original_Status As String) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_AppointmentID, Decimal)
             If (Original_GuestID.HasValue = True) Then
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0, Object)
@@ -5712,6 +6015,20 @@ Namespace MIYEDatasetTableAdapters
                 Me.Adapter.DeleteCommand.Parameters(11).Value = CType(1, Object)
                 Me.Adapter.DeleteCommand.Parameters(12).Value = Global.System.DBNull.Value
             End If
+            If (Original_Timestamp.HasValue = True) Then
+                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(0, Object)
+                Me.Adapter.DeleteCommand.Parameters(14).Value = CType(Original_Timestamp.Value, Date)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(1, Object)
+                Me.Adapter.DeleteCommand.Parameters(14).Value = Global.System.DBNull.Value
+            End If
+            If (Original_Status Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(15).Value = CType(1, Object)
+                Me.Adapter.DeleteCommand.Parameters(16).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(15).Value = CType(0, Object)
+                Me.Adapter.DeleteCommand.Parameters(16).Value = CType(Original_Status, String)
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open) _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -5731,7 +6048,7 @@ Namespace MIYEDatasetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"), _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, True)> _
-        Public Overridable Overloads Function Insert(ByVal GuestID As Global.System.Nullable(Of Decimal), ByVal ServiceID As Global.System.Nullable(Of Integer), ByVal DateOfService As Global.System.Nullable(Of Date), ByVal StartingTime As Global.System.Nullable(Of Global.System.TimeSpan), ByVal EndingTime As Global.System.Nullable(Of Global.System.TimeSpan), ByVal Price As Global.System.Nullable(Of Decimal)) As Integer
+        Public Overridable Overloads Function Insert(ByVal GuestID As Global.System.Nullable(Of Decimal), ByVal ServiceID As Global.System.Nullable(Of Integer), ByVal DateOfService As Global.System.Nullable(Of Date), ByVal StartingTime As Global.System.Nullable(Of Global.System.TimeSpan), ByVal EndingTime As Global.System.Nullable(Of Global.System.TimeSpan), ByVal Price As Global.System.Nullable(Of Decimal), ByVal Timestamp As Global.System.Nullable(Of Date), ByVal Status As String) As Integer
             If (GuestID.HasValue = True) Then
                 Me.Adapter.InsertCommand.Parameters(0).Value = CType(GuestID.Value, Decimal)
             Else
@@ -5762,6 +6079,16 @@ Namespace MIYEDatasetTableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(5).Value = Global.System.DBNull.Value
             End If
+            If (Timestamp.HasValue = True) Then
+                Me.Adapter.InsertCommand.Parameters(6).Value = CType(Timestamp.Value, Date)
+            Else
+                Me.Adapter.InsertCommand.Parameters(6).Value = Global.System.DBNull.Value
+            End If
+            If (Status Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(7).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(7).Value = CType(Status, String)
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open) _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -5781,7 +6108,25 @@ Namespace MIYEDatasetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"), _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, True)> _
-        Public Overridable Overloads Function Update(ByVal GuestID As Global.System.Nullable(Of Decimal), ByVal ServiceID As Global.System.Nullable(Of Integer), ByVal DateOfService As Global.System.Nullable(Of Date), ByVal StartingTime As Global.System.Nullable(Of Global.System.TimeSpan), ByVal EndingTime As Global.System.Nullable(Of Global.System.TimeSpan), ByVal Price As Global.System.Nullable(Of Decimal), ByVal Original_AppointmentID As Decimal, ByVal Original_GuestID As Global.System.Nullable(Of Decimal), ByVal Original_ServiceID As Global.System.Nullable(Of Integer), ByVal Original_DateOfService As Global.System.Nullable(Of Date), ByVal Original_StartingTime As Global.System.Nullable(Of Global.System.TimeSpan), ByVal Original_EndingTime As Global.System.Nullable(Of Global.System.TimeSpan), ByVal Original_Price As Global.System.Nullable(Of Decimal), ByVal AppointmentID As Decimal) As Integer
+        Public Overridable Overloads Function Update( _
+                    ByVal GuestID As Global.System.Nullable(Of Decimal), _
+                    ByVal ServiceID As Global.System.Nullable(Of Integer), _
+                    ByVal DateOfService As Global.System.Nullable(Of Date), _
+                    ByVal StartingTime As Global.System.Nullable(Of Global.System.TimeSpan), _
+                    ByVal EndingTime As Global.System.Nullable(Of Global.System.TimeSpan), _
+                    ByVal Price As Global.System.Nullable(Of Decimal), _
+                    ByVal Timestamp As Global.System.Nullable(Of Date), _
+                    ByVal Status As String, _
+                    ByVal Original_AppointmentID As Decimal, _
+                    ByVal Original_GuestID As Global.System.Nullable(Of Decimal), _
+                    ByVal Original_ServiceID As Global.System.Nullable(Of Integer), _
+                    ByVal Original_DateOfService As Global.System.Nullable(Of Date), _
+                    ByVal Original_StartingTime As Global.System.Nullable(Of Global.System.TimeSpan), _
+                    ByVal Original_EndingTime As Global.System.Nullable(Of Global.System.TimeSpan), _
+                    ByVal Original_Price As Global.System.Nullable(Of Decimal), _
+                    ByVal Original_Timestamp As Global.System.Nullable(Of Date), _
+                    ByVal Original_Status As String, _
+                    ByVal AppointmentID As Decimal) As Integer
             If (GuestID.HasValue = True) Then
                 Me.Adapter.UpdateCommand.Parameters(0).Value = CType(GuestID.Value, Decimal)
             Else
@@ -5812,50 +6157,74 @@ Namespace MIYEDatasetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
             End If
-            Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Original_AppointmentID, Decimal)
-            If (Original_GuestID.HasValue = True) Then
-                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(0, Object)
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_GuestID.Value, Decimal)
+            If (Timestamp.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Timestamp.Value, Date)
             Else
-                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(1, Object)
-                Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
             End If
-            If (Original_ServiceID.HasValue = True) Then
+            If (Status Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Status, String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_AppointmentID, Decimal)
+            If (Original_GuestID.HasValue = True) Then
                 Me.Adapter.UpdateCommand.Parameters(9).Value = CType(0, Object)
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_ServiceID.Value, Integer)
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_GuestID.Value, Decimal)
             Else
                 Me.Adapter.UpdateCommand.Parameters(9).Value = CType(1, Object)
                 Me.Adapter.UpdateCommand.Parameters(10).Value = Global.System.DBNull.Value
             End If
-            If (Original_DateOfService.HasValue = True) Then
+            If (Original_ServiceID.HasValue = True) Then
                 Me.Adapter.UpdateCommand.Parameters(11).Value = CType(0, Object)
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_DateOfService.Value, Date)
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_ServiceID.Value, Integer)
             Else
                 Me.Adapter.UpdateCommand.Parameters(11).Value = CType(1, Object)
                 Me.Adapter.UpdateCommand.Parameters(12).Value = Global.System.DBNull.Value
             End If
-            If (Original_StartingTime.HasValue = True) Then
+            If (Original_DateOfService.HasValue = True) Then
                 Me.Adapter.UpdateCommand.Parameters(13).Value = CType(0, Object)
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(Original_StartingTime.Value, System.TimeSpan)
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(Original_DateOfService.Value, Date)
             Else
                 Me.Adapter.UpdateCommand.Parameters(13).Value = CType(1, Object)
                 Me.Adapter.UpdateCommand.Parameters(14).Value = Global.System.DBNull.Value
             End If
-            If (Original_EndingTime.HasValue = True) Then
+            If (Original_StartingTime.HasValue = True) Then
                 Me.Adapter.UpdateCommand.Parameters(15).Value = CType(0, Object)
-                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(Original_EndingTime.Value, System.TimeSpan)
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(Original_StartingTime.Value, System.TimeSpan)
             Else
                 Me.Adapter.UpdateCommand.Parameters(15).Value = CType(1, Object)
                 Me.Adapter.UpdateCommand.Parameters(16).Value = Global.System.DBNull.Value
             End If
-            If (Original_Price.HasValue = True) Then
+            If (Original_EndingTime.HasValue = True) Then
                 Me.Adapter.UpdateCommand.Parameters(17).Value = CType(0, Object)
-                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(Original_Price.Value, Decimal)
+                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(Original_EndingTime.Value, System.TimeSpan)
             Else
                 Me.Adapter.UpdateCommand.Parameters(17).Value = CType(1, Object)
                 Me.Adapter.UpdateCommand.Parameters(18).Value = Global.System.DBNull.Value
             End If
-            Me.Adapter.UpdateCommand.Parameters(19).Value = CType(AppointmentID, Decimal)
+            If (Original_Price.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(Original_Price.Value, Decimal)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(20).Value = Global.System.DBNull.Value
+            End If
+            If (Original_Timestamp.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(Original_Timestamp.Value, Date)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(22).Value = Global.System.DBNull.Value
+            End If
+            If (Original_Status Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(24).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(Original_Status, String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(25).Value = CType(AppointmentID, Decimal)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open) _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -5875,8 +6244,113 @@ Namespace MIYEDatasetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"), _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, True)> _
-        Public Overridable Overloads Function Update(ByVal GuestID As Global.System.Nullable(Of Decimal), ByVal ServiceID As Global.System.Nullable(Of Integer), ByVal DateOfService As Global.System.Nullable(Of Date), ByVal StartingTime As Global.System.Nullable(Of Global.System.TimeSpan), ByVal EndingTime As Global.System.Nullable(Of Global.System.TimeSpan), ByVal Price As Global.System.Nullable(Of Decimal), ByVal Original_AppointmentID As Decimal, ByVal Original_GuestID As Global.System.Nullable(Of Decimal), ByVal Original_ServiceID As Global.System.Nullable(Of Integer), ByVal Original_DateOfService As Global.System.Nullable(Of Date), ByVal Original_StartingTime As Global.System.Nullable(Of Global.System.TimeSpan), ByVal Original_EndingTime As Global.System.Nullable(Of Global.System.TimeSpan), ByVal Original_Price As Global.System.Nullable(Of Decimal)) As Integer
-            Return Me.Update(GuestID, ServiceID, DateOfService, StartingTime, EndingTime, Price, Original_AppointmentID, Original_GuestID, Original_ServiceID, Original_DateOfService, Original_StartingTime, Original_EndingTime, Original_Price, Original_AppointmentID)
+        Public Overridable Overloads Function Update( _
+                    ByVal GuestID As Global.System.Nullable(Of Decimal), _
+                    ByVal ServiceID As Global.System.Nullable(Of Integer), _
+                    ByVal DateOfService As Global.System.Nullable(Of Date), _
+                    ByVal StartingTime As Global.System.Nullable(Of Global.System.TimeSpan), _
+                    ByVal EndingTime As Global.System.Nullable(Of Global.System.TimeSpan), _
+                    ByVal Price As Global.System.Nullable(Of Decimal), _
+                    ByVal Timestamp As Global.System.Nullable(Of Date), _
+                    ByVal Status As String, _
+                    ByVal Original_AppointmentID As Decimal, _
+                    ByVal Original_GuestID As Global.System.Nullable(Of Decimal), _
+                    ByVal Original_ServiceID As Global.System.Nullable(Of Integer), _
+                    ByVal Original_DateOfService As Global.System.Nullable(Of Date), _
+                    ByVal Original_StartingTime As Global.System.Nullable(Of Global.System.TimeSpan), _
+                    ByVal Original_EndingTime As Global.System.Nullable(Of Global.System.TimeSpan), _
+                    ByVal Original_Price As Global.System.Nullable(Of Decimal), _
+                    ByVal Original_Timestamp As Global.System.Nullable(Of Date), _
+                    ByVal Original_Status As String) As Integer
+            Return Me.Update(GuestID, ServiceID, DateOfService, StartingTime, EndingTime, Price, Timestamp, Status, Original_AppointmentID, Original_GuestID, Original_ServiceID, Original_DateOfService, Original_StartingTime, Original_EndingTime, Original_Price, Original_Timestamp, Original_Status, Original_AppointmentID)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")> _
+        Public Overridable Overloads Function getAppointmentStatus(ByVal appId As Decimal) As String
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(3)
+            command.Parameters(0).Value = CType(appId, Decimal)
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open) _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open()
+            End If
+            Dim returnValue As Object
+            Try
+                returnValue = command.ExecuteScalar
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    command.Connection.Close()
+                End If
+            End Try
+            If ((returnValue Is Nothing) _
+                        OrElse (returnValue.GetType Is GetType(Global.System.DBNull))) Then
+                Return Nothing
+            Else
+                Return CType(returnValue, String)
+            End If
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"), _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, False)> _
+        Public Overridable Overloads Function UpdateAppointmentStatusWithFine(ByVal Status As String, ByVal Original_AppointmentID As Decimal) As Integer
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(4)
+            If (Status Is Nothing) Then
+                command.Parameters(0).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(0).Value = CType(Status, String)
+            End If
+            command.Parameters(1).Value = CType(Original_AppointmentID, Decimal)
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open) _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open()
+            End If
+            Dim returnValue As Integer
+            Try
+                returnValue = command.ExecuteNonQuery
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    command.Connection.Close()
+                End If
+            End Try
+            Return returnValue
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"), _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, False)> _
+        Public Overridable Overloads Function UpdateAppointmentStatusWithoutFine(ByVal Price As Global.System.Nullable(Of Decimal), ByVal Status As String, ByVal Original_AppointmentID As Decimal) As Integer
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(5)
+            If (Price.HasValue = True) Then
+                command.Parameters(0).Value = CType(Price.Value, Decimal)
+            Else
+                command.Parameters(0).Value = Global.System.DBNull.Value
+            End If
+            If (Status Is Nothing) Then
+                command.Parameters(1).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(1).Value = CType(Status, String)
+            End If
+            command.Parameters(2).Value = CType(Original_AppointmentID, Decimal)
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open) _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open()
+            End If
+            Dim returnValue As Integer
+            Try
+                returnValue = command.ExecuteNonQuery
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    command.Connection.Close()
+                End If
+            End Try
+            Return returnValue
         End Function
     End Class
 
@@ -6022,6 +6496,10 @@ Namespace MIYEDatasetTableAdapters
             tableMapping.ColumnMappings.Add("TypeID", "TypeID")
             tableMapping.ColumnMappings.Add("Expr2", "Expr2")
             tableMapping.ColumnMappings.Add("TypeName", "TypeName")
+            tableMapping.ColumnMappings.Add("Timestamp", "Timestamp")
+            tableMapping.ColumnMappings.Add("Status", "Status")
+            tableMapping.ColumnMappings.Add("ServiceName", "ServiceName")
+            tableMapping.ColumnMappings.Add("Cost", "Cost")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
 
@@ -6039,28 +6517,30 @@ Namespace MIYEDatasetTableAdapters
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT        GuestID, FName, LName, Email, Phone, AppointmentID, Expr1, ServiceI" & _
-                "D, DateOfService, StartingTime, EndingTime, Price, TypeID, Expr2, TypeName" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "FROM" & _
-                "            viewAppointments"
+                "D, DateOfService, StartingTime, EndingTime, Price, TypeID, Expr2, TypeName, Time" & _
+                "stamp, Status, ServiceName, Cost" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "FROM            viewAppointments"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "SELECT        viewAppointments.*" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "FROM            viewAppointments" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "WHERE        " & _
-                "(AppointmentID = @appointmentID)"
+            Me._commandCollection(1).CommandText = "SELECT AppointmentID, Cost, DateOfService, Email, EndingTime, Expr1, Expr2, FName" & _
+                ", GuestID, LName, Phone, Price, ServiceID, ServiceName, StartingTime, Status, Ti" & _
+                "mestamp, TypeID, TypeName FROM viewAppointments WHERE (AppointmentID = @appointm" & _
+                "entID)"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@appointmentID", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 0, "AppointmentID", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
             Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(2).Connection = Me.Connection
-            Me._commandCollection(2).CommandText = "SELECT        GuestID, FName, LName, Email, Phone, AppointmentID, Expr1, ServiceI" & _
-                "D, DateOfService, StartingTime, EndingTime, Price, TypeID, Expr2, TypeName" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "FROM" & _
-                "            viewAppointments" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Where GuestID=@guestID"
+            Me._commandCollection(2).CommandText = "SELECT AppointmentID, Cost, DateOfService, Email, EndingTime, Expr1, Expr2, FName" & _
+                ", GuestID, LName, Phone, Price, ServiceID, ServiceName, StartingTime, Status, Ti" & _
+                "mestamp, TypeID, TypeName FROM viewAppointments WHERE (GuestID = @guestID)"
             Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@guestID", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 0, "GuestID", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
             Me._commandCollection(3) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(3).Connection = Me.Connection
-            Me._commandCollection(3).CommandText = "SELECT        GuestID, FName, LName, Email, Phone, AppointmentID, Expr1, ServiceI" & _
-                "D, DateOfService, StartingTime, EndingTime, Price, TypeID, Expr2, TypeName" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "FROM" & _
-                "            viewAppointments" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "WHERE        (FName LIKE N'%' + @name + N'%') OR" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & _
-                "                         (LName LIKE N'%' + @name + N'%')"
+            Me._commandCollection(3).CommandText = "SELECT AppointmentID, Cost, DateOfService, Email, EndingTime, Expr1, Expr2, FName" & _
+                ", GuestID, LName, Phone, Price, ServiceID, ServiceName, StartingTime, Status, Ti" & _
+                "mestamp, TypeID, TypeName FROM viewAppointments WHERE (FName LIKE N'%' + @name +" & _
+                " N'%') OR (LName LIKE N'%' + @name + N'%')"
             Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@name", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "FName", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
         End Sub

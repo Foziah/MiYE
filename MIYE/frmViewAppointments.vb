@@ -36,4 +36,27 @@
     Private Sub btnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
         frmPrint.ShowDialog()
     End Sub
+
+    Private Sub btnCancelREservation_Click(sender As Object, e As EventArgs) Handles btnCancelREservation.Click
+        Dim appointments As New MIYEDatasetTableAdapters.viewAppointmentsTableAdapter
+        Dim appointmentsAdapter As New MIYEDatasetTableAdapters.tblAppointmentsTableAdapter
+        Dim dt As DataTable = appointments.GetDataByAppointmentID(appointmentID)
+        Dim value As DateTime = Convert.ToDateTime(dt.Rows(0)(15).ToString())
+        Dim appDate As DateTime = Convert.ToDateTime(CDate(dt.Rows(0)(8).ToString()) + " " + dt.Rows(0)(9).ToString())
+        Dim diff = DateDiff(DateInterval.Minute, value, DateTime.Now)
+        Dim diff2 = DateDiff(DateInterval.Minute, appDate, value)
+        If (appointmentsAdapter.getAppointmentStatus(appointmentID) = "Active") Then
+            If (diff <= 10 Or diff2 <= 90) Then
+                appointmentsAdapter.UpdateAppointmentStatusWithoutFine(0, "Cancelled", appointmentID)
+                MessageBox.Show("Appointment Cancelled Without Any Charges.")
+            Else
+                appointmentsAdapter.UpdateAppointmentStatusWithFine("Cancelled", appointmentID)
+                MessageBox.Show("Appointment Cancelled. You still have to make payment because cancellation was not made within required timeframe.")
+            End If
+            Me.ViewAppointmentsTableAdapter.Fill(Me.MIYEDataset.viewAppointments)
+        Else
+            MessageBox.Show("This Appointment Cannot Be Cancelled.")
+        End If
+        
+    End Sub
 End Class
