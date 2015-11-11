@@ -25,13 +25,11 @@ Partial Class frmOperations
         Me.btnAddGuest = New System.Windows.Forms.Button()
         Me.btnNewAppointment = New System.Windows.Forms.Button()
         Me.btnView = New System.Windows.Forms.Button()
-        Me.btnAvailableServices = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btnAddGuest
         '
-        Me.btnAddGuest.Location = New System.Drawing.Point(79, 55)
+        Me.btnAddGuest.Location = New System.Drawing.Point(80, 82)
         Me.btnAddGuest.Name = "btnAddGuest"
         Me.btnAddGuest.Size = New System.Drawing.Size(113, 23)
         Me.btnAddGuest.TabIndex = 0
@@ -40,7 +38,7 @@ Partial Class frmOperations
         '
         'btnNewAppointment
         '
-        Me.btnNewAppointment.Location = New System.Drawing.Point(79, 84)
+        Me.btnNewAppointment.Location = New System.Drawing.Point(80, 111)
         Me.btnNewAppointment.Name = "btnNewAppointment"
         Me.btnNewAppointment.Size = New System.Drawing.Size(113, 23)
         Me.btnNewAppointment.TabIndex = 1
@@ -49,38 +47,18 @@ Partial Class frmOperations
         '
         'btnView
         '
-        Me.btnView.Location = New System.Drawing.Point(79, 113)
+        Me.btnView.Location = New System.Drawing.Point(80, 140)
         Me.btnView.Name = "btnView"
         Me.btnView.Size = New System.Drawing.Size(113, 23)
         Me.btnView.TabIndex = 2
         Me.btnView.Text = "View Appointments"
         Me.btnView.UseVisualStyleBackColor = True
         '
-        'btnAvailableServices
-        '
-        Me.btnAvailableServices.Location = New System.Drawing.Point(79, 142)
-        Me.btnAvailableServices.Name = "btnAvailableServices"
-        Me.btnAvailableServices.Size = New System.Drawing.Size(113, 23)
-        Me.btnAvailableServices.TabIndex = 3
-        Me.btnAvailableServices.Text = "Available Services"
-        Me.btnAvailableServices.UseVisualStyleBackColor = True
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(79, 171)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(113, 23)
-        Me.Button1.TabIndex = 4
-        Me.Button1.Text = "Service Availability"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
         'frmOperations
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(284, 261)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.btnAvailableServices)
         Me.Controls.Add(Me.btnView)
         Me.Controls.Add(Me.btnNewAppointment)
         Me.Controls.Add(Me.btnAddGuest)
@@ -93,6 +71,4 @@ Partial Class frmOperations
     Friend WithEvents btnAddGuest As System.Windows.Forms.Button
     Friend WithEvents btnNewAppointment As System.Windows.Forms.Button
     Friend WithEvents btnView As System.Windows.Forms.Button
-    Friend WithEvents btnAvailableServices As System.Windows.Forms.Button
-    Friend WithEvents Button1 As System.Windows.Forms.Button
 End Class

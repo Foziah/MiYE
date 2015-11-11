@@ -14,13 +14,4 @@
         'View All Appointments
         frmViewAppointments.ShowDialog()
     End Sub
-
-    Private Sub btnAvailableServices_Click(sender As Object, e As EventArgs) Handles btnAvailableServices.Click
-        'View Available Services
-        frmAvailableServices.ShowDialog()
-    End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        frmServiceAvailability.ShowDialog()
-    End Sub
 End Class

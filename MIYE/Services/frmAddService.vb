@@ -9,17 +9,15 @@
         ElseIf serviceCost = 0 Then
             MsgBox("Invalid Cost Entered.")
         Else
-            Dim service As New Service(serviceName, serviceCost)
-            service.AddService()
-            LoadServices()
+            tblServicesAdapter.Insert(serviceName, serviceCost)
+            Me.TblServicesTableAdapter.Fill(Me.MIYEDataset.tblServices)
         End If
+
     End Sub
-    Private Sub LoadServices()
-        Dim g As New Service()
-        Dim AllServices As DataTable = g.GetAllServices
-        gvServices.DataSource = AllServices
-    End Sub
+
     Private Sub frmAddService_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        LoadServices()
+        'TODO: This line of code loads data into the 'MIYEDataset.tblServices' table. You can move, or remove it, as needed.
+        Me.TblServicesTableAdapter.Fill(Me.MIYEDataset.tblServices)
+
     End Sub
 End Class

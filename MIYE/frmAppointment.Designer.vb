@@ -172,6 +172,7 @@ Partial Class frmAppointment
         '
         Me.cbServiceDuration.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbServiceDuration.FormattingEnabled = True
+        Me.cbServiceDuration.Items.AddRange(New Object() {"30 Minutes", "60 Minutes"})
         Me.cbServiceDuration.Location = New System.Drawing.Point(107, 136)
         Me.cbServiceDuration.Name = "cbServiceDuration"
         Me.cbServiceDuration.Size = New System.Drawing.Size(112, 21)

@@ -13,7 +13,6 @@ Public Class frmAppointment
         cbGuestName.DisplayMember = "Name"
         'Loading All Services
         Me.TblServicesTableAdapter.Fill(Me.MIYEDataset.tblServices)
-        LoadServiceDurations()
         'Initializing Values
         cbGuestID.SelectedIndex = 0
         cbServices.SelectedIndex = 0
@@ -23,7 +22,10 @@ Public Class frmAppointment
         cbServiceDuration.SelectedIndex = 0
         'Loading Service Types
         Me.TblServiceTypesTableAdapter.FillByServiceID(Me.MIYEDataset.tblServiceTypes, cbServices.SelectedValue)
+
     End Sub
+
+   
 
     Private Sub cbGuestID_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbGuestID.SelectedIndexChanged
         'cbGuestName.SelectedValue = cbGuestID.SelectedValue
@@ -37,7 +39,7 @@ Public Class frmAppointment
         Dim endTime As String = lblEndTime.Text 'get end time, end time is calculated using function ProcessTime()
         If cbServices.SelectedValue = 1 Then
             'Mineral Bath Services
-            If appointments.GetDataByGuestID(serviceDate, startTime, cbGuestID.SelectedValue).Rows.Count > 0 Then
+            If appointments.GetDataByGuestID(Date.Today.ToShortDateString(), startTime, cbGuestID.SelectedValue).Rows.Count > 0 Then
                 'A guest cannot reserve overlapping services
                 MessageBox.Show("A guest cannot reserve overlapping services")
             Else
@@ -47,11 +49,11 @@ Public Class frmAppointment
             End If
         Else
             'Services Other Than Mineral Bath
-            If appointments.GetDataByAppointmentExists(serviceDate, startTime, cbServiceType.SelectedValue).Rows.Count > 0 Then
+            If appointments.GetDataByAppointmentExists(Date.Today.ToShortDateString(), startTime, cbServiceType.SelectedValue).Rows.Count > 0 Then
                 'Appointment for someone already exists
                 MessageBox.Show("Only one guest at a time may reserve any service.")
             Else
-                If appointments.GetDataByGuestID(serviceDate, startTime, cbGuestID.SelectedValue).Rows.Count > 0 Then
+                If appointments.GetDataByGuestID(Date.Today.ToShortDateString(), startTime, cbGuestID.SelectedValue).Rows.Count > 0 Then
                     'A guest cannot reserve overlapping services
                     MessageBox.Show("A guest cannot reserve overlapping services")
                 Else
@@ -61,22 +63,12 @@ Public Class frmAppointment
                 End If
             End If
         End If
+
+
+       
     End Sub
-    Public Sub LoadServiceDurations()
-        If cbServices.SelectedValue = 1 Or cbServices.SelectedValue = 4 Then
-            'Mineral Bath Services/ Specialty Treatment Services (60-90 minutes)
-            cbServiceDuration.Items.Clear()
-            cbServiceDuration.Items.Add("60 minutes")
-            cbServiceDuration.Items.Add("90 minutes")
-        Else
-            cbServiceDuration.Items.Clear()
-            cbServiceDuration.Items.Add("30 minutes")
-            cbServiceDuration.Items.Add("60 minutes")
-        End If
-        cbServiceDuration.SelectedIndex = 0
-    End Sub
+
     Private Sub cbServices_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbServices.SelectedIndexChanged
-        LoadServiceDurations()
         'Load Service Types
         Me.TblServiceTypesTableAdapter.FillByServiceID(Me.MIYEDataset.tblServiceTypes, cbServices.SelectedValue)
         'updates time and cost when values are changed 
