@@ -24,8 +24,9 @@ Partial Class frmAddServiceType
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.cbServices = New System.Windows.Forms.ComboBox()
-        Me.ViewServiceTypesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TblServicesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.MIYEDataset = New MIYE.MIYEDataset()
+        Me.ViewServiceTypesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ViewServiceTypesTableAdapter = New MIYE.MIYEDatasetTableAdapters.viewServiceTypesTableAdapter()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -36,36 +37,37 @@ Partial Class frmAddServiceType
         Me.ServiceNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TypeNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ViewServiceTypesBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
-        Me.TblServicesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TblServicesTableAdapter = New MIYE.MIYEDatasetTableAdapters.tblServicesTableAdapter()
-        CType(Me.ViewServiceTypesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TblServicesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MIYEDataset, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ViewServiceTypesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gvServiceTypes, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ViewServiceTypesBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TblServicesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'cbServices
         '
-        Me.cbServices.DataSource = Me.TblServicesBindingSource
-        Me.cbServices.DisplayMember = "ServiceName"
         Me.cbServices.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbServices.FormattingEnabled = True
         Me.cbServices.Location = New System.Drawing.Point(206, 40)
         Me.cbServices.Name = "cbServices"
         Me.cbServices.Size = New System.Drawing.Size(171, 21)
         Me.cbServices.TabIndex = 0
-        Me.cbServices.ValueMember = "ServiceID"
         '
-        'ViewServiceTypesBindingSource
+        'TblServicesBindingSource
         '
-        Me.ViewServiceTypesBindingSource.DataMember = "viewServiceTypes"
-        Me.ViewServiceTypesBindingSource.DataSource = Me.MIYEDataset
+        Me.TblServicesBindingSource.DataMember = "tblServices"
+        Me.TblServicesBindingSource.DataSource = Me.MIYEDataset
         '
         'MIYEDataset
         '
         Me.MIYEDataset.DataSetName = "MIYEDataset"
         Me.MIYEDataset.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'ViewServiceTypesBindingSource
+        '
+        Me.ViewServiceTypesBindingSource.DataMember = "viewServiceTypes"
+        Me.ViewServiceTypesBindingSource.DataSource = Me.MIYEDataset
         '
         'ViewServiceTypesTableAdapter
         '
@@ -149,11 +151,6 @@ Partial Class frmAddServiceType
         Me.ViewServiceTypesBindingSource1.DataMember = "viewServiceTypes"
         Me.ViewServiceTypesBindingSource1.DataSource = Me.MIYEDataset
         '
-        'TblServicesBindingSource
-        '
-        Me.TblServicesBindingSource.DataMember = "tblServices"
-        Me.TblServicesBindingSource.DataSource = Me.MIYEDataset
-        '
         'TblServicesTableAdapter
         '
         Me.TblServicesTableAdapter.ClearBeforeFill = True
@@ -172,11 +169,11 @@ Partial Class frmAddServiceType
         Me.Name = "frmAddServiceType"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Add Service Type"
-        CType(Me.ViewServiceTypesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TblServicesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MIYEDataset, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ViewServiceTypesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.gvServiceTypes, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ViewServiceTypesBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TblServicesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

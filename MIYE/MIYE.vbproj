@@ -71,6 +71,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Appointments.vb" />
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +89,12 @@
       <DependentUpon>frmAppointment.vb</DependentUpon>
     </Compile>
     <Compile Include="frmAppointment.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAvailableServices.Designer.vb">
+      <DependentUpon>frmAvailableServices.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAvailableServices.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmMaintenance.Designer.vb">
@@ -108,12 +115,19 @@
     <Compile Include="frmPrint.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmServiceAvailability.Designer.vb">
+      <DependentUpon>frmServiceAvailability.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmServiceAvailability.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmViewAppointments.Designer.vb">
       <DependentUpon>frmViewAppointments.vb</DependentUpon>
     </Compile>
     <Compile Include="frmViewAppointments.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Guests.vb" />
     <Compile Include="MIYEDataset.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -137,6 +151,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Services.vb" />
     <Compile Include="Services\frmAddService.Designer.vb">
       <DependentUpon>frmAddService.vb</DependentUpon>
     </Compile>
@@ -161,6 +176,7 @@
     <Compile Include="Services\frmUpdateServiceTypes.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ServiceTypes.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Form1.resx">
@@ -172,6 +188,9 @@
     <EmbeddedResource Include="frmAppointment.resx">
       <DependentUpon>frmAppointment.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAvailableServices.resx">
+      <DependentUpon>frmAvailableServices.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMaintenance.resx">
       <DependentUpon>frmMaintenance.vb</DependentUpon>
     </EmbeddedResource>
@@ -180,6 +199,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrint.resx">
       <DependentUpon>frmPrint.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmServiceAvailability.resx">
+      <DependentUpon>frmServiceAvailability.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmViewAppointments.resx">
       <DependentUpon>frmViewAppointments.vb</DependentUpon>
