@@ -1,4 +1,5 @@
 'this is the main form that we first see at the begining
+'the beginig of software is this page
 Public Class Form1
     Private Sub btnMaintenance_Click(sender As Object, e As EventArgs) Handles btnMaintenance.Click
         'Show Maintenance Form
