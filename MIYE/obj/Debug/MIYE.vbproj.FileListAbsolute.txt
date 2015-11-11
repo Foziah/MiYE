@@ -18,3 +18,7 @@ F:\Visual Sutdio 2013\Projects\MIYE\MIYE\obj\Debug\MIYE.frmOperations.resources
 F:\Visual Sutdio 2013\Projects\MIYE\MIYE\obj\Debug\MIYE.frmAppointment.resources
 F:\Visual Sutdio 2013\Projects\MIYE\MIYE\obj\Debug\MIYE.frmViewAppointments.resources
 F:\Visual Sutdio 2013\Projects\MIYE\MIYE\obj\Debug\MIYE.frmPrint.resources
+C:\Marie\Github\MiYE\MIYE\bin\Debug\MIYE.exe.config
+C:\Marie\Github\MiYE\MIYE\obj\Debug\MIYE.exe
+C:\Marie\Github\MiYE\MIYE\obj\Debug\MIYE.xml
+C:\Marie\Github\MiYE\MIYE\obj\Debug\MIYE.pdb
