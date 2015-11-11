@@ -13,12 +13,12 @@
             txtGuestID.Text = dt.Rows(0)(0).ToString()
             txtFName.Text = dt.Rows(0)(1).ToString()
             txtLName.Text = dt.Rows(0)(2).ToString()
-            txtAppointmentDate.Text = CDate(dt.Rows(0)(8).ToString()).ToShortDateString()
+            txtAppointmentDate.Text = dt.Rows(0)(8).ToString()
             txtStartTime.Text = dt.Rows(0)(9).ToString()
             txtEndTime.Text = dt.Rows(0)(10).ToString()
-            txtServiceName.Text = dt.Rows(0)(17).ToString()
+            txtServiceName.Text = dt.Rows(0)(15).ToString()
             txtServiceType.Text = dt.Rows(0)(14).ToString()
-            txtRate.Text = dt.Rows(0)(18).ToString()
+            txtRate.Text = dt.Rows(0)(16).ToString()
             lblTotalPrice.Text = "$ " + dt.Rows(0)(11).ToString()
         Catch ex As Exception
 

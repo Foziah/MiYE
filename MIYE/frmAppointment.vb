@@ -44,7 +44,7 @@ Public Class frmAppointment
                 MessageBox.Show("A guest cannot reserve overlapping services")
             Else
                 'This function saves the appointment in database.
-                appointments.Insert(cbGuestID.SelectedValue, cbServiceType.SelectedValue, serviceDate, TimeSpan.Parse(startTime), TimeSpan.Parse(endTime), totalPrice, DateTime.Now, "Active") 'Inserting data in database
+                appointments.Insert(cbGuestID.SelectedValue, cbServiceType.SelectedValue, serviceDate, TimeSpan.Parse(startTime), TimeSpan.Parse(endTime), totalPrice) 'Inserting data in database
                 MessageBox.Show("Appointment Saved Successfully.")
             End If
         Else
@@ -58,7 +58,7 @@ Public Class frmAppointment
                     MessageBox.Show("A guest cannot reserve overlapping services")
                 Else
                     'This function saves the appointment in database.
-                    appointments.Insert(cbGuestID.SelectedValue, cbServiceType.SelectedValue, serviceDate, TimeSpan.Parse(startTime), TimeSpan.Parse(endTime), totalPrice, DateTime.Now, "Active") 'Inserting data in database
+                    appointments.Insert(cbGuestID.SelectedValue, cbServiceType.SelectedValue, serviceDate, TimeSpan.Parse(startTime), TimeSpan.Parse(endTime), totalPrice) 'Inserting data in database
                     MessageBox.Show("Appointment Saved Successfully.")
                 End If
             End If
