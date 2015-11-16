@@ -18,3 +18,26 @@ F:\Visual Sutdio 2013\Projects\MIYE\MIYE\obj\Debug\MIYE.frmOperations.resources
 F:\Visual Sutdio 2013\Projects\MIYE\MIYE\obj\Debug\MIYE.frmAppointment.resources
 F:\Visual Sutdio 2013\Projects\MIYE\MIYE\obj\Debug\MIYE.frmViewAppointments.resources
 F:\Visual Sutdio 2013\Projects\MIYE\MIYE\obj\Debug\MIYE.frmPrint.resources
+C:\Users\Folio 9470m\Desktop\Foziah Final Project Software Engineering MIYE\MIYE\MIYE\bin\Debug\MIYE.exe.config
+C:\Users\Folio 9470m\Desktop\Foziah Final Project Software Engineering MIYE\MIYE\MIYE\obj\Debug\MIYE.exe
+C:\Users\Folio 9470m\Desktop\Foziah Final Project Software Engineering MIYE\MIYE\MIYE\obj\Debug\MIYE.xml
+C:\Users\Folio 9470m\Desktop\Foziah Final Project Software Engineering MIYE\MIYE\MIYE\obj\Debug\MIYE.pdb
+C:\Users\Folio 9470m\Desktop\Foziah Final Project Software Engineering MIYE\MIYE\MIYE\obj\Debug\MIYE.Form1.resources
+C:\Users\Folio 9470m\Desktop\Foziah Final Project Software Engineering MIYE\MIYE\MIYE\obj\Debug\MIYE.frmAddGuest.resources
+C:\Users\Folio 9470m\Desktop\Foziah Final Project Software Engineering MIYE\MIYE\MIYE\obj\Debug\MIYE.frmAppointment.resources
+C:\Users\Folio 9470m\Desktop\Foziah Final Project Software Engineering MIYE\MIYE\MIYE\obj\Debug\MIYE.frmMaintenance.resources
+C:\Users\Folio 9470m\Desktop\Foziah Final Project Software Engineering MIYE\MIYE\MIYE\obj\Debug\MIYE.frmOperations.resources
+C:\Users\Folio 9470m\Desktop\Foziah Final Project Software Engineering MIYE\MIYE\MIYE\obj\Debug\MIYE.frmPrint.resources
+C:\Users\Folio 9470m\Desktop\Foziah Final Project Software Engineering MIYE\MIYE\MIYE\obj\Debug\MIYE.frmViewAppointments.resources
+C:\Users\Folio 9470m\Desktop\Foziah Final Project Software Engineering MIYE\MIYE\MIYE\obj\Debug\MIYE.Resources.resources
+C:\Users\Folio 9470m\Desktop\Foziah Final Project Software Engineering MIYE\MIYE\MIYE\obj\Debug\MIYE.frmAddService.resources
+C:\Users\Folio 9470m\Desktop\Foziah Final Project Software Engineering MIYE\MIYE\MIYE\obj\Debug\MIYE.frmAddServiceType.resources
+C:\Users\Folio 9470m\Desktop\Foziah Final Project Software Engineering MIYE\MIYE\MIYE\obj\Debug\MIYE.frmUpdateServices.resources
+C:\Users\Folio 9470m\Desktop\Foziah Final Project Software Engineering MIYE\MIYE\MIYE\obj\Debug\MIYE.frmUpdateServiceTypes.resources
+C:\Users\Folio 9470m\Desktop\Foziah Final Project Software Engineering MIYE\MIYE\MIYE\obj\Debug\MIYE.vbproj.GenerateResource.Cache
+C:\Users\Folio 9470m\Desktop\Foziah Final Project Software Engineering MIYE\MIYE\MIYE\bin\Debug\MIYE.exe
+C:\Users\Folio 9470m\Desktop\Foziah Final Project Software Engineering MIYE\MIYE\MIYE\bin\Debug\MIYE.pdb
+C:\Users\Folio 9470m\Desktop\Foziah Final Project Software Engineering MIYE\MIYE\MIYE\bin\Debug\MIYE.xml
+C:\Users\Folio 9470m\Desktop\Foziah Final Project Software Engineering MIYE\MIYE\MIYE\obj\Debug\MIYE.frmAvailableServices.resources
+C:\Users\Folio 9470m\Desktop\Foziah Final Project Software Engineering MIYE\MIYE\MIYE\obj\Debug\MIYE.vbprojResolveAssemblyReference.cache
+C:\Users\Folio 9470m\Desktop\Foziah Final Project Software Engineering MIYE\MIYE\MIYE\obj\Debug\MIYE.frmServiceAvailability.resources
