@@ -1372,6 +1372,14 @@ Partial Public Class MIYEDataset
 
         Private columnPhone As Global.System.Data.DataColumn
 
+        Private columnCheckinDate As Global.System.Data.DataColumn
+
+        Private columnCheckinTime As Global.System.Data.DataColumn
+
+        Private columnCheckoutDate As Global.System.Data.DataColumn
+
+        Private columnCheckoutTime As Global.System.Data.DataColumn
+
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Sub New()
@@ -1448,6 +1456,38 @@ Partial Public Class MIYEDataset
         End Property
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property CheckinDateColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnCheckinDate
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property CheckinTimeColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnCheckinTime
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property CheckoutDateColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnCheckoutDate
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property CheckoutTimeColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnCheckoutTime
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
          Global.System.ComponentModel.Browsable(False)> _
         Public ReadOnly Property Count() As Integer
@@ -1484,9 +1524,9 @@ Partial Public Class MIYEDataset
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Overloads Function AddtblGuestsRow(ByVal FName As String, ByVal LName As String, ByVal Email As String, ByVal Phone As String) As tblGuestsRow
+        Public Overloads Function AddtblGuestsRow(ByVal FName As String, ByVal LName As String, ByVal Email As String, ByVal Phone As String, ByVal CheckinDate As Date, ByVal CheckinTime As System.TimeSpan, ByVal CheckoutDate As Date, ByVal CheckoutTime As System.TimeSpan) As tblGuestsRow
             Dim rowtblGuestsRow As tblGuestsRow = CType(Me.NewRow, tblGuestsRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, FName, LName, Email, Phone}
+            Dim columnValuesArray() As Object = New Object() {Nothing, FName, LName, Email, Phone, CheckinDate, CheckinTime, CheckoutDate, CheckoutTime}
             rowtblGuestsRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowtblGuestsRow)
             Return rowtblGuestsRow
@@ -1520,6 +1560,10 @@ Partial Public Class MIYEDataset
             Me.columnLName = MyBase.Columns("LName")
             Me.columnEmail = MyBase.Columns("Email")
             Me.columnPhone = MyBase.Columns("Phone")
+            Me.columnCheckinDate = MyBase.Columns("CheckinDate")
+            Me.columnCheckinTime = MyBase.Columns("CheckinTime")
+            Me.columnCheckoutDate = MyBase.Columns("CheckoutDate")
+            Me.columnCheckoutTime = MyBase.Columns("CheckoutTime")
         End Sub
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
@@ -1535,6 +1579,14 @@ Partial Public Class MIYEDataset
             MyBase.Columns.Add(Me.columnEmail)
             Me.columnPhone = New Global.System.Data.DataColumn("Phone", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnPhone)
+            Me.columnCheckinDate = New Global.System.Data.DataColumn("CheckinDate", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCheckinDate)
+            Me.columnCheckinTime = New Global.System.Data.DataColumn("CheckinTime", GetType(Global.System.TimeSpan), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCheckinTime)
+            Me.columnCheckoutDate = New Global.System.Data.DataColumn("CheckoutDate", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCheckoutDate)
+            Me.columnCheckoutTime = New Global.System.Data.DataColumn("CheckoutTime", GetType(Global.System.TimeSpan), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCheckoutTime)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnGuestID}, True))
             Me.columnGuestID.AutoIncrement = True
             Me.columnGuestID.AutoIncrementSeed = -1
@@ -2962,6 +3014,66 @@ Partial Public Class MIYEDataset
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property CheckinDate() As Date
+            Get
+                Try
+                    Return CType(Me(Me.tabletblGuests.CheckinDateColumn), Date)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'CheckinDate' in table 'tblGuests' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As Date)
+                Me(Me.tabletblGuests.CheckinDateColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property CheckinTime() As System.TimeSpan
+            Get
+                Try
+                    Return CType(Me(Me.tabletblGuests.CheckinTimeColumn), Global.System.TimeSpan)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'CheckinTime' in table 'tblGuests' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As System.TimeSpan)
+                Me(Me.tabletblGuests.CheckinTimeColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property CheckoutDate() As Date
+            Get
+                Try
+                    Return CType(Me(Me.tabletblGuests.CheckoutDateColumn), Date)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'CheckoutDate' in table 'tblGuests' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As Date)
+                Me(Me.tabletblGuests.CheckoutDateColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property CheckoutTime() As System.TimeSpan
+            Get
+                Try
+                    Return CType(Me(Me.tabletblGuests.CheckoutTimeColumn), Global.System.TimeSpan)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'CheckoutTime' in table 'tblGuests' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As System.TimeSpan)
+                Me(Me.tabletblGuests.CheckoutTimeColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Function IsFNameNull() As Boolean
             Return Me.IsNull(Me.tabletblGuests.FNameColumn)
         End Function
@@ -3006,6 +3118,54 @@ Partial Public Class MIYEDataset
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Sub SetPhoneNull()
             Me(Me.tabletblGuests.PhoneColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsCheckinDateNull() As Boolean
+            Return Me.IsNull(Me.tabletblGuests.CheckinDateColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetCheckinDateNull()
+            Me(Me.tabletblGuests.CheckinDateColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsCheckinTimeNull() As Boolean
+            Return Me.IsNull(Me.tabletblGuests.CheckinTimeColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetCheckinTimeNull()
+            Me(Me.tabletblGuests.CheckinTimeColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsCheckoutDateNull() As Boolean
+            Return Me.IsNull(Me.tabletblGuests.CheckoutDateColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetCheckoutDateNull()
+            Me(Me.tabletblGuests.CheckoutDateColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsCheckoutTimeNull() As Boolean
+            Return Me.IsNull(Me.tabletblGuests.CheckoutTimeColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetCheckoutTimeNull()
+            Me(Me.tabletblGuests.CheckoutTimeColumn) = Global.System.Convert.DBNull
         End Sub
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
@@ -5229,6 +5389,10 @@ Namespace MIYEDatasetTableAdapters
             tableMapping.ColumnMappings.Add("LName", "LName")
             tableMapping.ColumnMappings.Add("Email", "Email")
             tableMapping.ColumnMappings.Add("Phone", "Phone")
+            tableMapping.ColumnMappings.Add("CheckinDate", "CheckinDate")
+            tableMapping.ColumnMappings.Add("CheckinTime", "CheckinTime")
+            tableMapping.ColumnMappings.Add("CheckoutDate", "CheckoutDate")
+            tableMapping.ColumnMappings.Add("CheckoutTime", "CheckoutTime")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
@@ -5236,7 +5400,12 @@ Namespace MIYEDatasetTableAdapters
                 "e = 1 AND [FName] IS NULL) OR ([FName] = @Original_FName)) AND ((@IsNull_LName =" & _
                 " 1 AND [LName] IS NULL) OR ([LName] = @Original_LName)) AND ((@IsNull_Email = 1 " & _
                 "AND [Email] IS NULL) OR ([Email] = @Original_Email)) AND ((@IsNull_Phone = 1 AND" & _
-                " [Phone] IS NULL) OR ([Phone] = @Original_Phone)))"
+                " [Phone] IS NULL) OR ([Phone] = @Original_Phone)) AND ((@IsNull_CheckinDate = 1 " & _
+                "AND [CheckinDate] IS NULL) OR ([CheckinDate] = @Original_CheckinDate)) AND ((@Is" & _
+                "Null_CheckinTime = 1 AND [CheckinTime] IS NULL) OR ([CheckinTime] = @Original_Ch" & _
+                "eckinTime)) AND ((@IsNull_CheckoutDate = 1 AND [CheckoutDate] IS NULL) OR ([Chec" & _
+                "koutDate] = @Original_CheckoutDate)) AND ((@IsNull_CheckoutTime = 1 AND [Checkou" & _
+                "tTime] IS NULL) OR ([CheckoutTime] = @Original_CheckoutTime)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_GuestID", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "GuestID", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_FName", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "FName", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
@@ -5247,30 +5416,55 @@ Namespace MIYEDatasetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Email", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Email", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Phone", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Phone", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Phone", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Phone", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_CheckinDate", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CheckinDate", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CheckinDate", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CheckinDate", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_CheckinTime", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CheckinTime", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CheckinTime", Global.System.Data.SqlDbType.Time, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CheckinTime", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_CheckoutDate", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CheckoutDate", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CheckoutDate", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CheckoutDate", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_CheckoutTime", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CheckoutTime", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CheckoutTime", Global.System.Data.SqlDbType.Time, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CheckoutTime", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [tblGuests] ([FName], [LName], [Email], [Phone]) VALUES (@FName, @LNa" & _
-                "me, @Email, @Phone);" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "SELECT GuestID, FName, LName, Email, Phone FROM tblGuests " & _
-                "WHERE (GuestID = SCOPE_IDENTITY())"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [tblGuests] ([FName], [LName], [Email], [Phone], [CheckinDate], [Chec" & _
+                "kinTime], [CheckoutDate], [CheckoutTime]) VALUES (@FName, @LName, @Email, @Phone" & _
+                ", @CheckinDate, @CheckinTime, @CheckoutDate, @CheckoutTime);" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "SELECT GuestID, FN" & _
+                "ame, LName, Email, Phone, CheckinDate, CheckinTime, CheckoutDate, CheckoutTime F" & _
+                "ROM tblGuests WHERE (GuestID = SCOPE_IDENTITY())"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@FName", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "FName", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@LName", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "LName", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Email", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Email", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Phone", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Phone", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CheckinDate", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CheckinDate", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CheckinTime", Global.System.Data.SqlDbType.Time, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CheckinTime", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CheckoutDate", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CheckoutDate", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CheckoutTime", Global.System.Data.SqlDbType.Time, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CheckoutTime", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
             Me._adapter.UpdateCommand.CommandText = "UPDATE [tblGuests] SET [FName] = @FName, [LName] = @LName, [Email] = @Email, [Pho" & _
-                "ne] = @Phone WHERE (([GuestID] = @Original_GuestID) AND ((@IsNull_FName = 1 AND " & _
-                "[FName] IS NULL) OR ([FName] = @Original_FName)) AND ((@IsNull_LName = 1 AND [LN" & _
-                "ame] IS NULL) OR ([LName] = @Original_LName)) AND ((@IsNull_Email = 1 AND [Email" & _
-                "] IS NULL) OR ([Email] = @Original_Email)) AND ((@IsNull_Phone = 1 AND [Phone] I" & _
-                "S NULL) OR ([Phone] = @Original_Phone)));" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "SELECT GuestID, FName, LName, Email, " & _
-                "Phone FROM tblGuests WHERE (GuestID = @GuestID)"
+                "ne] = @Phone, [CheckinDate] = @CheckinDate, [CheckinTime] = @CheckinTime, [Check" & _
+                "outDate] = @CheckoutDate, [CheckoutTime] = @CheckoutTime WHERE (([GuestID] = @Or" & _
+                "iginal_GuestID) AND ((@IsNull_FName = 1 AND [FName] IS NULL) OR ([FName] = @Orig" & _
+                "inal_FName)) AND ((@IsNull_LName = 1 AND [LName] IS NULL) OR ([LName] = @Origina" & _
+                "l_LName)) AND ((@IsNull_Email = 1 AND [Email] IS NULL) OR ([Email] = @Original_E" & _
+                "mail)) AND ((@IsNull_Phone = 1 AND [Phone] IS NULL) OR ([Phone] = @Original_Phon" & _
+                "e)) AND ((@IsNull_CheckinDate = 1 AND [CheckinDate] IS NULL) OR ([CheckinDate] =" & _
+                " @Original_CheckinDate)) AND ((@IsNull_CheckinTime = 1 AND [CheckinTime] IS NULL" & _
+                ") OR ([CheckinTime] = @Original_CheckinTime)) AND ((@IsNull_CheckoutDate = 1 AND" & _
+                " [CheckoutDate] IS NULL) OR ([CheckoutDate] = @Original_CheckoutDate)) AND ((@Is" & _
+                "Null_CheckoutTime = 1 AND [CheckoutTime] IS NULL) OR ([CheckoutTime] = @Original" & _
+                "_CheckoutTime)));" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "SELECT GuestID, FName, LName, Email, Phone, CheckinDate, Chec" & _
+                "kinTime, CheckoutDate, CheckoutTime FROM tblGuests WHERE (GuestID = @GuestID)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@FName", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "FName", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@LName", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "LName", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Email", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Email", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Phone", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Phone", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CheckinDate", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CheckinDate", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CheckinTime", Global.System.Data.SqlDbType.Time, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CheckinTime", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CheckoutDate", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CheckoutDate", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CheckoutTime", Global.System.Data.SqlDbType.Time, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CheckoutTime", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_GuestID", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "GuestID", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_FName", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "FName", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_FName", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "FName", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
@@ -5280,6 +5474,14 @@ Namespace MIYEDatasetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Email", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Email", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Phone", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Phone", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Phone", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Phone", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_CheckinDate", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CheckinDate", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CheckinDate", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CheckinDate", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_CheckinTime", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CheckinTime", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CheckinTime", Global.System.Data.SqlDbType.Time, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CheckinTime", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_CheckoutDate", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CheckoutDate", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CheckoutDate", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CheckoutDate", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_CheckoutTime", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CheckoutTime", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CheckoutTime", Global.System.Data.SqlDbType.Time, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CheckoutTime", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@GuestID", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 0, "GuestID", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
         End Sub
 
@@ -5293,16 +5495,23 @@ Namespace MIYEDatasetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(1) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(2) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT        tblGuests.*" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "FROM            tblGuests"
+            Me._commandCollection(0).CommandText = "SELECT        GuestID, FName, LName, Email, Phone, CheckinDate, CheckinTime, Chec" & _
+                "koutDate, CheckoutTime" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "FROM            tblGuests"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "SELECT        GuestID, FName + ' ' + LName AS Name, Email, Phone" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "FROM           " & _
-                " tblGuests"
+            Me._commandCollection(1).CommandText = "SELECT        CheckinDate, CheckinTime, CheckoutDate, CheckoutTime" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "FROM         " & _
+                "   tblGuests" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "WHERE        (GuestID = @guestID)"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@guestID", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 0, "GuestID", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+            Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(2).Connection = Me.Connection
+            Me._commandCollection(2).CommandText = "SELECT CheckinDate, CheckinTime, CheckoutDate, CheckoutTime, Email, FName+ ' ' + " & _
+                "LName AS Name, GuestID,  Phone FROM tblGuests"
+            Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
         End Sub
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
@@ -5333,8 +5542,34 @@ Namespace MIYEDatasetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"), _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, False)> _
-        Public Overridable Overloads Function FillByNaME(ByVal dataTable As MIYEDataset.tblGuestsDataTable) As Integer
+        Public Overridable Overloads Function FillByCheckInCheckOut(ByVal dataTable As MIYEDataset.tblGuestsDataTable, ByVal guestID As Decimal) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(1)
+            Me.Adapter.SelectCommand.Parameters(0).Value = CType(guestID, Decimal)
+            If (Me.ClearBeforeFill = True) Then
+                dataTable.Clear()
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"), _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], False)> _
+        Public Overridable Overloads Function GetDataByCheckInCheckOut(ByVal guestID As Decimal) As MIYEDataset.tblGuestsDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(1)
+            Me.Adapter.SelectCommand.Parameters(0).Value = CType(guestID, Decimal)
+            Dim dataTable As MIYEDataset.tblGuestsDataTable = New MIYEDataset.tblGuestsDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"), _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, False)> _
+        Public Overridable Overloads Function FillByNaME(ByVal dataTable As MIYEDataset.tblGuestsDataTable) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(2)
             If (Me.ClearBeforeFill = True) Then
                 dataTable.Clear()
             End If
@@ -5347,7 +5582,7 @@ Namespace MIYEDatasetTableAdapters
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"), _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], False)> _
         Public Overridable Overloads Function GetDataBynAME() As MIYEDataset.tblGuestsDataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(1)
+            Me.Adapter.SelectCommand = Me.CommandCollection(2)
             Dim dataTable As MIYEDataset.tblGuestsDataTable = New MIYEDataset.tblGuestsDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
@@ -5385,7 +5620,7 @@ Namespace MIYEDatasetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"), _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, True)> _
-        Public Overridable Overloads Function Delete(ByVal Original_GuestID As Decimal, ByVal Original_FName As String, ByVal Original_LName As String, ByVal Original_Email As String, ByVal Original_Phone As String) As Integer
+        Public Overridable Overloads Function Delete(ByVal Original_GuestID As Decimal, ByVal Original_FName As String, ByVal Original_LName As String, ByVal Original_Email As String, ByVal Original_Phone As String, ByVal Original_CheckinDate As Global.System.Nullable(Of Date), ByVal Original_CheckinTime As Global.System.Nullable(Of Global.System.TimeSpan), ByVal Original_CheckoutDate As Global.System.Nullable(Of Date), ByVal Original_CheckoutTime As Global.System.Nullable(Of Global.System.TimeSpan)) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_GuestID, Decimal)
             If (Original_FName Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1, Object)
@@ -5415,6 +5650,34 @@ Namespace MIYEDatasetTableAdapters
                 Me.Adapter.DeleteCommand.Parameters(7).Value = CType(0, Object)
                 Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_Phone, String)
             End If
+            If (Original_CheckinDate.HasValue = True) Then
+                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(0, Object)
+                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(Original_CheckinDate.Value, Date)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(1, Object)
+                Me.Adapter.DeleteCommand.Parameters(10).Value = Global.System.DBNull.Value
+            End If
+            If (Original_CheckinTime.HasValue = True) Then
+                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(0, Object)
+                Me.Adapter.DeleteCommand.Parameters(12).Value = CType(Original_CheckinTime.Value, System.TimeSpan)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(1, Object)
+                Me.Adapter.DeleteCommand.Parameters(12).Value = Global.System.DBNull.Value
+            End If
+            If (Original_CheckoutDate.HasValue = True) Then
+                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(0, Object)
+                Me.Adapter.DeleteCommand.Parameters(14).Value = CType(Original_CheckoutDate.Value, Date)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(1, Object)
+                Me.Adapter.DeleteCommand.Parameters(14).Value = Global.System.DBNull.Value
+            End If
+            If (Original_CheckoutTime.HasValue = True) Then
+                Me.Adapter.DeleteCommand.Parameters(15).Value = CType(0, Object)
+                Me.Adapter.DeleteCommand.Parameters(16).Value = CType(Original_CheckoutTime.Value, System.TimeSpan)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(15).Value = CType(1, Object)
+                Me.Adapter.DeleteCommand.Parameters(16).Value = Global.System.DBNull.Value
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open) _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -5434,7 +5697,7 @@ Namespace MIYEDatasetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"), _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, True)> _
-        Public Overridable Overloads Function Insert(ByVal FName As String, ByVal LName As String, ByVal Email As String, ByVal Phone As String) As Integer
+        Public Overridable Overloads Function Insert(ByVal FName As String, ByVal LName As String, ByVal Email As String, ByVal Phone As String, ByVal CheckinDate As Global.System.Nullable(Of Date), ByVal CheckinTime As Global.System.Nullable(Of Global.System.TimeSpan), ByVal CheckoutDate As Global.System.Nullable(Of Date), ByVal CheckoutTime As Global.System.Nullable(Of Global.System.TimeSpan)) As Integer
             If (FName Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
@@ -5455,6 +5718,26 @@ Namespace MIYEDatasetTableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(3).Value = CType(Phone, String)
             End If
+            If (CheckinDate.HasValue = True) Then
+                Me.Adapter.InsertCommand.Parameters(4).Value = CType(CheckinDate.Value, Date)
+            Else
+                Me.Adapter.InsertCommand.Parameters(4).Value = Global.System.DBNull.Value
+            End If
+            If (CheckinTime.HasValue = True) Then
+                Me.Adapter.InsertCommand.Parameters(5).Value = CType(CheckinTime.Value, System.TimeSpan)
+            Else
+                Me.Adapter.InsertCommand.Parameters(5).Value = Global.System.DBNull.Value
+            End If
+            If (CheckoutDate.HasValue = True) Then
+                Me.Adapter.InsertCommand.Parameters(6).Value = CType(CheckoutDate.Value, Date)
+            Else
+                Me.Adapter.InsertCommand.Parameters(6).Value = Global.System.DBNull.Value
+            End If
+            If (CheckoutTime.HasValue = True) Then
+                Me.Adapter.InsertCommand.Parameters(7).Value = CType(CheckoutTime.Value, System.TimeSpan)
+            Else
+                Me.Adapter.InsertCommand.Parameters(7).Value = Global.System.DBNull.Value
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open) _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -5474,7 +5757,25 @@ Namespace MIYEDatasetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"), _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, True)> _
-        Public Overridable Overloads Function Update(ByVal FName As String, ByVal LName As String, ByVal Email As String, ByVal Phone As String, ByVal Original_GuestID As Decimal, ByVal Original_FName As String, ByVal Original_LName As String, ByVal Original_Email As String, ByVal Original_Phone As String, ByVal GuestID As Decimal) As Integer
+        Public Overridable Overloads Function Update( _
+                    ByVal FName As String, _
+                    ByVal LName As String, _
+                    ByVal Email As String, _
+                    ByVal Phone As String, _
+                    ByVal CheckinDate As Global.System.Nullable(Of Date), _
+                    ByVal CheckinTime As Global.System.Nullable(Of Global.System.TimeSpan), _
+                    ByVal CheckoutDate As Global.System.Nullable(Of Date), _
+                    ByVal CheckoutTime As Global.System.Nullable(Of Global.System.TimeSpan), _
+                    ByVal Original_GuestID As Decimal, _
+                    ByVal Original_FName As String, _
+                    ByVal Original_LName As String, _
+                    ByVal Original_Email As String, _
+                    ByVal Original_Phone As String, _
+                    ByVal Original_CheckinDate As Global.System.Nullable(Of Date), _
+                    ByVal Original_CheckinTime As Global.System.Nullable(Of Global.System.TimeSpan), _
+                    ByVal Original_CheckoutDate As Global.System.Nullable(Of Date), _
+                    ByVal Original_CheckoutTime As Global.System.Nullable(Of Global.System.TimeSpan), _
+                    ByVal GuestID As Decimal) As Integer
             If (FName Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
@@ -5495,36 +5796,84 @@ Namespace MIYEDatasetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Phone, String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Original_GuestID, Decimal)
-            If (Original_FName Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(1, Object)
+            If (CheckinDate.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(CheckinDate.Value, Date)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
+            End If
+            If (CheckinTime.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(CheckinTime.Value, System.TimeSpan)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
+            End If
+            If (CheckoutDate.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(CheckoutDate.Value, Date)
+            Else
                 Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(0, Object)
-                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Original_FName, String)
             End If
-            If (Original_LName Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(1, Object)
-                Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
+            If (CheckoutTime.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(CheckoutTime.Value, System.TimeSpan)
             Else
-                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(0, Object)
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_LName, String)
+                Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
             End If
-            If (Original_Email Is Nothing) Then
+            Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_GuestID, Decimal)
+            If (Original_FName Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(9).Value = CType(1, Object)
                 Me.Adapter.UpdateCommand.Parameters(10).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(9).Value = CType(0, Object)
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_Email, String)
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_FName, String)
             End If
-            If (Original_Phone Is Nothing) Then
+            If (Original_LName Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(11).Value = CType(1, Object)
                 Me.Adapter.UpdateCommand.Parameters(12).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(11).Value = CType(0, Object)
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_Phone, String)
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_LName, String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(13).Value = CType(GuestID, Decimal)
+            If (Original_Email Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(14).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(Original_Email, String)
+            End If
+            If (Original_Phone Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(16).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(Original_Phone, String)
+            End If
+            If (Original_CheckinDate.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(Original_CheckinDate.Value, Date)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(18).Value = Global.System.DBNull.Value
+            End If
+            If (Original_CheckinTime.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(Original_CheckinTime.Value, System.TimeSpan)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(20).Value = Global.System.DBNull.Value
+            End If
+            If (Original_CheckoutDate.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(Original_CheckoutDate.Value, Date)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(22).Value = Global.System.DBNull.Value
+            End If
+            If (Original_CheckoutTime.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(Original_CheckoutTime.Value, System.TimeSpan)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(24).Value = Global.System.DBNull.Value
+            End If
+            Me.Adapter.UpdateCommand.Parameters(25).Value = CType(GuestID, Decimal)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open) _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -5544,8 +5893,25 @@ Namespace MIYEDatasetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"), _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, True)> _
-        Public Overridable Overloads Function Update(ByVal FName As String, ByVal LName As String, ByVal Email As String, ByVal Phone As String, ByVal Original_GuestID As Decimal, ByVal Original_FName As String, ByVal Original_LName As String, ByVal Original_Email As String, ByVal Original_Phone As String) As Integer
-            Return Me.Update(FName, LName, Email, Phone, Original_GuestID, Original_FName, Original_LName, Original_Email, Original_Phone, Original_GuestID)
+        Public Overridable Overloads Function Update( _
+                    ByVal FName As String, _
+                    ByVal LName As String, _
+                    ByVal Email As String, _
+                    ByVal Phone As String, _
+                    ByVal CheckinDate As Global.System.Nullable(Of Date), _
+                    ByVal CheckinTime As Global.System.Nullable(Of Global.System.TimeSpan), _
+                    ByVal CheckoutDate As Global.System.Nullable(Of Date), _
+                    ByVal CheckoutTime As Global.System.Nullable(Of Global.System.TimeSpan), _
+                    ByVal Original_GuestID As Decimal, _
+                    ByVal Original_FName As String, _
+                    ByVal Original_LName As String, _
+                    ByVal Original_Email As String, _
+                    ByVal Original_Phone As String, _
+                    ByVal Original_CheckinDate As Global.System.Nullable(Of Date), _
+                    ByVal Original_CheckinTime As Global.System.Nullable(Of Global.System.TimeSpan), _
+                    ByVal Original_CheckoutDate As Global.System.Nullable(Of Date), _
+                    ByVal Original_CheckoutTime As Global.System.Nullable(Of Global.System.TimeSpan)) As Integer
+            Return Me.Update(FName, LName, Email, Phone, CheckinDate, CheckinTime, CheckoutDate, CheckoutTime, Original_GuestID, Original_FName, Original_LName, Original_Email, Original_Phone, Original_CheckinDate, Original_CheckinTime, Original_CheckoutDate, Original_CheckoutTime, Original_GuestID)
         End Function
     End Class
 
