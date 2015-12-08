@@ -41,3 +41,26 @@ C:\Users\Folio 9470m\Desktop\Foziah Final Project Software Engineering MIYE\MIYE
 C:\Users\Folio 9470m\Desktop\Foziah Final Project Software Engineering MIYE\MIYE\MIYE\obj\Debug\MIYE.frmAvailableServices.resources
 C:\Users\Folio 9470m\Desktop\Foziah Final Project Software Engineering MIYE\MIYE\MIYE\obj\Debug\MIYE.vbprojResolveAssemblyReference.cache
 C:\Users\Folio 9470m\Desktop\Foziah Final Project Software Engineering MIYE\MIYE\MIYE\obj\Debug\MIYE.frmServiceAvailability.resources
+C:\Marie\_School\_CGU\Fall2015\FInal Proj\MiYE\MIYE\bin\Debug\MIYE.exe.config
+C:\Marie\_School\_CGU\Fall2015\FInal Proj\MiYE\MIYE\obj\Debug\MIYE.exe
+C:\Marie\_School\_CGU\Fall2015\FInal Proj\MiYE\MIYE\obj\Debug\MIYE.xml
+C:\Marie\_School\_CGU\Fall2015\FInal Proj\MiYE\MIYE\obj\Debug\MIYE.pdb
+C:\Marie\_School\_CGU\Fall2015\FInal Proj\MiYE\MIYE\bin\Debug\MIYE.exe
+C:\Marie\_School\_CGU\Fall2015\FInal Proj\MiYE\MIYE\bin\Debug\MIYE.pdb
+C:\Marie\_School\_CGU\Fall2015\FInal Proj\MiYE\MIYE\bin\Debug\MIYE.xml
+C:\Marie\_School\_CGU\Fall2015\FInal Proj\MiYE\MIYE\obj\Debug\MIYE.vbprojResolveAssemblyReference.cache
+C:\Marie\_School\_CGU\Fall2015\FInal Proj\MiYE\MIYE\obj\Debug\MIYE.Form1.resources
+C:\Marie\_School\_CGU\Fall2015\FInal Proj\MiYE\MIYE\obj\Debug\MIYE.frmAddGuest.resources
+C:\Marie\_School\_CGU\Fall2015\FInal Proj\MiYE\MIYE\obj\Debug\MIYE.frmAppointment.resources
+C:\Marie\_School\_CGU\Fall2015\FInal Proj\MiYE\MIYE\obj\Debug\MIYE.frmAvailableServices.resources
+C:\Marie\_School\_CGU\Fall2015\FInal Proj\MiYE\MIYE\obj\Debug\MIYE.frmMaintenance.resources
+C:\Marie\_School\_CGU\Fall2015\FInal Proj\MiYE\MIYE\obj\Debug\MIYE.frmOperations.resources
+C:\Marie\_School\_CGU\Fall2015\FInal Proj\MiYE\MIYE\obj\Debug\MIYE.frmPrint.resources
+C:\Marie\_School\_CGU\Fall2015\FInal Proj\MiYE\MIYE\obj\Debug\MIYE.frmServiceAvailability.resources
+C:\Marie\_School\_CGU\Fall2015\FInal Proj\MiYE\MIYE\obj\Debug\MIYE.frmViewAppointments.resources
+C:\Marie\_School\_CGU\Fall2015\FInal Proj\MiYE\MIYE\obj\Debug\MIYE.Resources.resources
+C:\Marie\_School\_CGU\Fall2015\FInal Proj\MiYE\MIYE\obj\Debug\MIYE.frmAddService.resources
+C:\Marie\_School\_CGU\Fall2015\FInal Proj\MiYE\MIYE\obj\Debug\MIYE.frmAddServiceType.resources
+C:\Marie\_School\_CGU\Fall2015\FInal Proj\MiYE\MIYE\obj\Debug\MIYE.frmUpdateServices.resources
+C:\Marie\_School\_CGU\Fall2015\FInal Proj\MiYE\MIYE\obj\Debug\MIYE.frmUpdateServiceTypes.resources
+C:\Marie\_School\_CGU\Fall2015\FInal Proj\MiYE\MIYE\obj\Debug\MIYE.vbproj.GenerateResource.Cache

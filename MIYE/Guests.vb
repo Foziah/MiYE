@@ -11,6 +11,10 @@
         Dim g As DataTable = Guests.GetData()
         Return g
     End Function
+    Function GetGuestByName() As DataTable
+        Dim g As DataTable = Guests.GetDataBynAME()
+        Return g
+    End Function
     Public Sub New()
 
     End Sub

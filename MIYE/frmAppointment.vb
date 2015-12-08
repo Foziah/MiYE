@@ -1,4 +1,6 @@
 ﻿Imports System.Globalization
+Imports System
+
 
 Public Class frmAppointment
     Dim totalPrice As Decimal = 0
@@ -35,6 +37,8 @@ Public Class frmAppointment
         Dim startTime As String = cbStartHrs.Text + ":" + cbStartMinutes.Text 'concatenates hours:minutes
         Dim serviceDate As Date = DateTimePicker1.Text 'get service date
         Dim endTime As String = lblEndTime.Text 'get end time, end time is calculated using function ProcessTime()
+        System.Diagnostics.Debug.WriteLine("yay!" + serviceDate + endTime)
+
         If cbServices.SelectedValue = 1 Then
             'Mineral Bath Services
             If appointments.GetDataByGuestID(serviceDate, startTime, cbGuestID.SelectedValue).Rows.Count > 0 Then
@@ -96,18 +100,24 @@ Public Class frmAppointment
             'Get cost of selected service from database
             Dim cost As Decimal = TblServicesTableAdapter.GetCostByServiceID(cbServices.SelectedValue)
             Dim serviceDateTime As String = serviceDate.ToShortDateString() + " " + startTime
-            Dim endDateTime As String = ""
+            Dim endDateTime As String = "0"
+            System.Diagnostics.Debug.WriteLine("origDateTime" + endDateTime)
             'Check if service is 30 minutes or 60 minutes
             If cbServiceDuration.SelectedIndex = 0 Then
                 '30 Minutes
+                System.Diagnostics.Debug.WriteLine("endDate1 " + endDateTime)
                 endDateTime = Convert.ToDateTime(serviceDateTime).AddMinutes(30)
+                System.Diagnostics.Debug.WriteLine("endDate1 " + endDateTime)
                 totalPrice = cost * 30
             Else
                 '60 Minutes
                 endDateTime = Convert.ToDateTime(serviceDateTime).AddMinutes(60)
+                System.Diagnostics.Debug.WriteLine("endDate2 " + endDateTime)
                 totalPrice = cost * 60
             End If
+            System.Diagnostics.Debug.WriteLine("endif " + endDateTime)
             Dim dtt As DateTime = Convert.ToDateTime(endDateTime)
+            System.Diagnostics.Debug.WriteLine("dtt" + dtt)
             Dim convertedTime As String = dtt.ToString("HH:mm")
             lblEndTime.Text = convertedTime 'displaying end time on form
             lblTotalPrice.Text = "$ " + totalPrice.ToString() 'displaying total price on form
