@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{896CDE98-1A27-414F-89C4-5D661C0AC84D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>MIYE.My.MyApplication</StartupObject>
+    <RootNamespace>MIYE</RootNamespace>
+    <AssemblyName>MIYE</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>MIYE.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>MIYE.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Appointments.vb" />
+    <Compile Include="Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddGuest.Designer.vb">
+      <DependentUpon>frmAddGuest.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddGuest.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAppointment.Designer.vb">
+      <DependentUpon>frmAppointment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAppointment.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAvailableServices.Designer.vb">
+      <DependentUpon>frmAvailableServices.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAvailableServices.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMaintenance.Designer.vb">
+      <DependentUpon>frmMaintenance.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMaintenance.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOperations.Designer.vb">
+      <DependentUpon>frmOperations.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmOperations.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrint.Designer.vb">
+      <DependentUpon>frmPrint.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrint.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmServiceAvailability.Designer.vb">
+      <DependentUpon>frmServiceAvailability.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmServiceAvailability.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmViewAppointments.Designer.vb">
+      <DependentUpon>frmViewAppointments.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmViewAppointments.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Guests.vb" />
+    <Compile Include="MIYEDataset.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MIYEDataset.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MIYEDataset.vb">
+      <DependentUpon>MIYEDataset.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Services.vb" />
+    <Compile Include="Services\frmAddService.Designer.vb">
+      <DependentUpon>frmAddService.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Services\frmAddService.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Services\frmAddServiceType.Designer.vb">
+      <DependentUpon>frmAddServiceType.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Services\frmAddServiceType.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Services\frmUpdateServices.Designer.vb">
+      <DependentUpon>frmUpdateServices.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Services\frmUpdateServices.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Services\frmUpdateServiceTypes.Designer.vb">
+      <DependentUpon>frmUpdateServiceTypes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Services\frmUpdateServiceTypes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ServiceTypes.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddGuest.resx">
+      <DependentUpon>frmAddGuest.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAppointment.resx">
+      <DependentUpon>frmAppointment.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAvailableServices.resx">
+      <DependentUpon>frmAvailableServices.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMaintenance.resx">
+      <DependentUpon>frmMaintenance.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOperations.resx">
+      <DependentUpon>frmOperations.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrint.resx">
+      <DependentUpon>frmPrint.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmServiceAvailability.resx">
+      <DependentUpon>frmServiceAvailability.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmViewAppointments.resx">
+      <DependentUpon>frmViewAppointments.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Services\frmAddService.resx">
+      <DependentUpon>frmAddService.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Services\frmAddServiceType.resx">
+      <DependentUpon>frmAddServiceType.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Services\frmUpdateServices.resx">
+      <DependentUpon>frmUpdateServices.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Services\frmUpdateServiceTypes.resx">
+      <DependentUpon>frmUpdateServiceTypes.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MIYEDataset.xsc">
+      <DependentUpon>MIYEDataset.xsd</DependentUpon>
+    </None>
+    <None Include="MIYEDataset.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MIYEDataset.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="MIYEDataset.xss">
+      <DependentUpon>MIYEDataset.xsd</DependentUpon>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
